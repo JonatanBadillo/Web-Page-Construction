@@ -5,7 +5,9 @@ import Navbar from './Components/Navbar/Navbar'
 
 const App = () => {
 
-  const [theme, setTheme] = React.useState('light')
+  const currentTheme = localStorage.getItem('theme');
+
+  const [theme, setTheme] = React.useState(currentTheme? currentTheme : 'light');
 
   return (
     <div className={`container ${theme}`}>
