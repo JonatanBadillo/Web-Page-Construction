@@ -81,9 +81,17 @@ ul li{
     justify-content: space-between;
 }
 
+.navbar li {
+    display: inline; /* Los elementos de la lista se muestran en línea en pantallas grandes */
+}
+
 /* Estilos para dispositivos con pantalla pequeña */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
+    }
+
+    .navbar li {
+        display: block; /* Los elementos de la lista se muestran como bloques en pantallas pequeñas */
     }
 }
