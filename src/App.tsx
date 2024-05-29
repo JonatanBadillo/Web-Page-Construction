@@ -8,7 +8,7 @@ const App = () => {
   const [theme, setTheme] = React.useState('light')
 
   return (
-    <div className='container'>
+    <div className={`container ${theme}`}>
       <Navbar theme={theme} setTheme={setTheme} />
     </div>
   )
