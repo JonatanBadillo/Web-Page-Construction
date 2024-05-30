@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Navbar from './Components/Navbar/Navbar'
 
 
@@ -7,7 +7,7 @@ const App = () => {
 
   const currentTheme = localStorage.getItem('currentTheme');
 
-  const [theme, setTheme] = React.useState(currentTheme? currentTheme : 'light');
+  const [theme, setTheme] = useState(currentTheme? currentTheme : 'light');
 
   useEffect(() => {
     localStorage.setItem('currentTheme', theme);
