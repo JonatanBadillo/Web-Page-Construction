@@ -1,4 +1,3 @@
-import React from 'react'
 import './Navbar.css'
 // import logo_light from ''
 // import logo_dark from ''
