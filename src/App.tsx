@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import Navbar from './Components/Navbar/Navbar'
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
+import Card from './Components/Cards/Card';
+import Cards from './Components/Cards/Cards';
 
 
 
@@ -37,6 +39,9 @@ const App = () => {
   return (
     <div className={`container ${theme}`}>
       <Navbar theme={theme} setTheme={setTheme} />
+
+      <Card/>
+
       <center><h1>Our Work</h1></center>
       <div style={{width: "70vw", margin: "auto"}}>
         <ImageGallery items={images} 
