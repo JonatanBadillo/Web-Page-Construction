@@ -3,6 +3,7 @@ import Navbar from './Components/Navbar/Navbar'
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import Card from './Components/Cards/Card';
+import Form from './Components/Form/Form';
 
 
 
@@ -49,6 +50,8 @@ const App = () => {
         />
       </div>
       
+
+      <Form/>
     </div>
   )
 }
