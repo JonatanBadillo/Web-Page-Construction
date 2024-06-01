@@ -37,6 +37,7 @@ const App = () => {
   return (
     <div className={`container ${theme}`}>
       <Navbar theme={theme} setTheme={setTheme} />
+      <center><h1>Our Work</h1></center>
       <div style={{width: "70vw", margin: "auto"}}>
         <ImageGallery items={images} 
         showBullets={true}
