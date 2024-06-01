@@ -10,7 +10,25 @@ import { RxArrowTopRight } from 'react-icons/rx'
 
 const Cards = () => {
   return (
-    <div>
+    <div className='flex items-center justify-center flex-col h-screen '>
+        <Swiper
+            breakpoints={{
+                340: {
+                    slidesPerView: 2,
+                    spaceBetween: 15
+                },
+                700:{
+                    slidesPerView: 3,
+                    spaceBetween: 15
+                }
+            }}
+            freeMode={true}
+            pagination={{ clickable: true }}
+            modules={[FreeMode, Pagination]}
+            className='max-w-[90%] lg:max-w-[80%]'
+        >   
+        
+        </Swiper>
         
     </div>
   )
