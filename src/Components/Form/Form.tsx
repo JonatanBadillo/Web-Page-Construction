@@ -20,9 +20,11 @@ const Form = () => {
 
         <label>Reason for contact:</label>
         <select name="reason">
+        <option value="inquiry">Project Inquiry</option>
           <option value="doubt">Doubt</option>
           <option value="complain">Complain</option>
           <option value="suggestion">Suggestion</option>
+
         </select>
 
 
