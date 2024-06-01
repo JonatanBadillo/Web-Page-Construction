@@ -39,7 +39,12 @@ const App = () => {
     <div className={`container ${theme}`}>
       <Navbar theme={theme} setTheme={setTheme} />
       <Cards />
-      <ImageGallery items={images} />
+      <div style={{width: "70vw", margin: "auto"}}>
+        <ImageGallery items={images} 
+        showBullets={true}
+        />
+      </div>
+      
     </div>
   )
 }
