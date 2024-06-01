@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Navbar from './Components/Navbar/Navbar'
+import Cards from './Components/Cards/Cards';
 
 
 
@@ -16,6 +17,7 @@ const App = () => {
   return (
     <div className={`container ${theme}`}>
       <Navbar theme={theme} setTheme={setTheme} />
+      <Cards />
     </div>
   )
 }
