@@ -3,7 +3,7 @@ import './Form.css'
 const Form = () => {
   return (
     <div>
-        <form>
+        <form className="form-container">
         <label>Name:</label>
         <input type="text" name="name" />
 

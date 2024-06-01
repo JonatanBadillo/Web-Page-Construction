@@ -1,25 +1,27 @@
-/* Form.css */
 
-form {
+.form-container {
     display: flex;
     flex-direction: column;
     width: 300px;
     margin: auto;
 }
 
-label {
+.form-container label {
     display: block;
     margin: 10px 0 5px 0;
     font-weight: bold;
 }
 
-input[type="text"], input[type="email"], input[type="tel"], select {
+.form-container input[type="text"], 
+.form-container input[type="email"], 
+.form-container input[type="tel"], 
+.form-container select {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-button[type="submit"] {
+.form-container button[type="submit"] {
     margin-top: 20px;
     padding: 10px;
     background-color: #4CAF50;
@@ -29,6 +31,6 @@ button[type="submit"] {
     cursor: pointer;
 }
 
-button[type="submit"]:hover {
+.form-container button[type="submit"]:hover {
     background-color: #45a049;
 }
