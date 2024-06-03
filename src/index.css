@@ -19,5 +19,11 @@
   display: flex;
   justify-content: space-between; /* Para distribuir las cartas horizontalmente */
   flex-wrap: wrap; /* Para permitir que las cartas se envuelvan a una nueva línea si no hay suficiente espacio */
-  gap: 20px; /* Espacio entre las cartas */
 }
+
+/* Estilo para reducir el margen interno de las cartas */
+.card-container CustomCard {
+  margin: 5px; 
+}
+
+

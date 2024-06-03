@@ -35,7 +35,7 @@ const App = () => {
   return (
     <div className={`container ${theme}`}>
       <Navbar theme={theme} setTheme={setTheme} />
-
+      <center></center>
       <div className="card-container">
         <CustomCard
           imageSrc="src/assets/company3.jpg"
