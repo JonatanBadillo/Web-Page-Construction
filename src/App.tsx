@@ -38,26 +38,26 @@ const App = () => {
       <Navbar theme={theme} setTheme={setTheme} />
 
       <CustomCard
-        imageSrc="/static/images/cards/contemplative-reptile.jpg"
+        imageSrc="src/assets/company3.jpg"
         imageAlt="green iguana"
-        title="Lizard"
-        description="Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
-        buttonText="Share"
+        title="Our Team"
+        description="Meet the talented individuals who make up our company."
+        buttonText="LinkedIn"
       />
 
       <CustomCard
-        imageSrc="/static/images/cards/another-image.jpg"
+        imageSrc="src/assets/company2.jpg"
         imageAlt="another description"
-        title="Another Card"
-        description="This is another card with different content and an image."
+        title="Our History"
+        description="Discover the story behind our company\'s founding and growth."
         buttonText="Learn More"
       />
 
       <CustomCard
-        imageSrc="/static/images/cards/another-image.jpg"
+        imageSrc="src/assets/company.jpg"
         imageAlt="another description"
-        title="Another Card"
-        description="This is another card with different content and an image."
+        title="Our Services"
+        description="Explore the wide range of services we offer to our clients."
         buttonText="Learn More"
       />
 
