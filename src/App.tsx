@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+
 import Navbar from './Components/Navbar/Navbar';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
@@ -25,17 +25,14 @@ const App = () => {
     }
   ];
 
-  const currentTheme = localStorage.getItem('currentTheme');
-  const [theme, setTheme] = useState(currentTheme ? currentTheme : 'light');
 
-  useEffect(() => {
-    localStorage.setItem('currentTheme', theme);
-  }, [theme]);
+
+
 
   return (
-    <div className={`container ${theme}`}>
-      <Navbar theme={theme} setTheme={setTheme} />
-      <center></center>
+    <div >
+      <Navbar/>
+
       <div className="card-container">
         <CustomCard
           imageSrc="src/assets/company3.jpg"
