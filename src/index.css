@@ -14,3 +14,10 @@
 .container.dark{
   background: #222;
 }
+
+.card-container {
+  display: flex;
+  justify-content: space-between; /* Para distribuir las cartas horizontalmente */
+  flex-wrap: wrap; /* Para permitir que las cartas se envuelvan a una nueva línea si no hay suficiente espacio */
+  gap: 20px; /* Espacio entre las cartas */
+}

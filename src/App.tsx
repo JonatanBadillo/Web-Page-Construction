@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import Navbar from './Components/Navbar/Navbar';
 import ImageGallery from 'react-image-gallery';
@@ -37,29 +36,31 @@ const App = () => {
     <div className={`container ${theme}`}>
       <Navbar theme={theme} setTheme={setTheme} />
 
-      <CustomCard
-        imageSrc="src/assets/company3.jpg"
-        imageAlt="green iguana"
-        title="Our Team"
-        description="Meet the talented individuals who make up our company."
-        buttonText="LinkedIn"
-      />
+      <div className="card-container">
+        <CustomCard
+          imageSrc="src/assets/company3.jpg"
+          imageAlt="green iguana"
+          title="Our Team"
+          description="Meet the talented individuals who make up our company."
+          buttonText="LinkedIn"
+        />
 
-      <CustomCard
-        imageSrc="src/assets/company2.jpg"
-        imageAlt="another description"
-        title="Our History"
-        description="Discover the story behind our company\'s founding and growth."
-        buttonText="Learn More"
-      />
+        <CustomCard
+          imageSrc="src/assets/company2.jpg"
+          imageAlt="another description"
+          title="Our History"
+          description="Discover the story behind our company's founding and growth."
+          buttonText="Learn More"
+        />
 
-      <CustomCard
-        imageSrc="src/assets/company.jpg"
-        imageAlt="another description"
-        title="Our Services"
-        description="Explore the wide range of services we offer to our clients."
-        buttonText="Learn More"
-      />
+        <CustomCard
+          imageSrc="src/assets/company.jpg"
+          imageAlt="another description"
+          title="Our Services"
+          description="Explore the wide range of services we offer to our clients."
+          buttonText="Learn More"
+        />
+      </div>
 
       <center><h1>Our Work</h1></center>
       <div>
