@@ -96,7 +96,9 @@ export default function DrawerAppBar(props: Props) {
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth , backgroundColor: '#000', /* Color base para navegadores que no soportan gradientes */
+              background: 'radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%)',
+              color: '#ffdb58' /* Gradiente radial */},
           }}
         >
           {drawer}
