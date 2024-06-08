@@ -3,6 +3,8 @@ import Navbar from './Components/Navbar/Navbar';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import CustomCard from './Components/Cards/Card';
+import Footer from './Components/Footer/Footer';
+
 import Form from './Components/Form/Form';
 
 const App = () => {
@@ -66,6 +68,7 @@ const App = () => {
       </div>
 
       <Form />
+      <Footer />
     </div>
   );
 };

@@ -1,0 +1,31 @@
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #366df7; /* Un fondo oscuro para un look moderno */
+  color: #fff; /* Texto blanco para contraste */
+}
+
+.footer-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sponsors-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Espacio entre imágenes */
+}
+
+.sponsor-image {
+  height: 50px; /* Altura de las imágenes */
+  transition: transform 0.3s ease; /* Efecto de transición al pasar el mouse */
+}
+
+.sponsor-image:hover {
+  transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse */
+}
