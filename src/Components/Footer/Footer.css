@@ -3,36 +3,38 @@
   flex-direction: column;
   align-items: center;
   padding: 60px 20px;
-  background-color: #366df7; 
-  color: #fff; /* Texto en blanco para contraste */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
-  border-top: 5px solid #274baf; /* Borde superior para un toque de diseño */
+  background: linear-gradient(145deg, #0a0a0a, #2e2e2e); /* Gradiente de negro */
+  color: #ffdb58; /* Color de texto mostaza */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-top: 5px solid #ffdb58; /* Borde superior mostaza para un toque de diseño */
 }
 
 .footer-title {
   margin-bottom: 30px;
-  font-size: 28px; /* Tamaño de fuente más grande */
-  font-weight: bold; /* Fuente en negrita */
+  font-size: 28px;
+  font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 2px; /* Espaciado de letras para un look más elegante */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra de texto para destacar */
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: #ffdb58; /* Color de texto mostaza */
 }
 
 .sponsors-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 30px; /* Más espacio entre logos */
+  gap: 30px;
 }
 
 .sponsor-image {
-  height: 60px; 
+  height: 60px;
   transition: transform 0.3s ease;
-  border-radius: 10px; /* Bordes redondeados para las imágenes */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra en las imágenes para resaltar */
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .sponsor-image:hover {
-  transform: scale(1.15); /* Efecto de crecimiento */
-  cursor: pointer; 
+  transform: scale(1.15);
+  cursor: pointer;
 }
