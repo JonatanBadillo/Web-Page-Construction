@@ -5,6 +5,8 @@ const Footer = () => {
   const sponsors = [
     { src: 'src/assets/sponsor.png', alt: 'Enterprise 1' },
     { src: 'src/assets/sponsor.png', alt: 'Enterprise 2' },
+    { src: 'src/assets/sponsor.png', alt: 'Enterprise 3' },
+    { src: 'src/assets/sponsor.png', alt: 'Enterprise 4' },
     // Agrega más patrocinadores aquí
   ];
 

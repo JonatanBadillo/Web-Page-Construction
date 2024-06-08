@@ -2,30 +2,37 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 20px;
-  background-color: #366df7; /* Un fondo oscuro para un look moderno */
-  color: #fff; /* Texto blanco para contraste */
+  padding: 60px 20px;
+  background-color: #366df7; 
+  color: #fff; /* Texto en blanco para contraste */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+  border-top: 5px solid #274baf; /* Borde superior para un toque de diseño */
 }
 
 .footer-title {
-  margin-bottom: 20px;
-  font-size: 24px;
+  margin-bottom: 30px;
+  font-size: 28px; /* Tamaño de fuente más grande */
+  font-weight: bold; /* Fuente en negrita */
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px; /* Espaciado de letras para un look más elegante */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra de texto para destacar */
 }
 
 .sponsors-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px; /* Espacio entre imágenes */
+  gap: 30px; /* Más espacio entre logos */
 }
 
 .sponsor-image {
-  height: 50px; /* Altura de las imágenes */
-  transition: transform 0.3s ease; /* Efecto de transición al pasar el mouse */
+  height: 60px; 
+  transition: transform 0.3s ease;
+  border-radius: 10px; /* Bordes redondeados para las imágenes */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra en las imágenes para resaltar */
 }
 
 .sponsor-image:hover {
-  transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse */
+  transform: scale(1.15); /* Efecto de crecimiento */
+  cursor: pointer; 
 }
