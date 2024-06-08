@@ -17,13 +17,12 @@
 
 .card-container {
   display: flex;
-  justify-content: space-between; /* Para distribuir las cartas horizontalmente */
-  flex-wrap: wrap; /* Para permitir que las cartas se envuelvan a una nueva línea si no hay suficiente espacio */
+  justify-content: center; /* Cambiado a center para evitar espacio extra */
+  flex-wrap: wrap;
+  gap: 10px; /* Agregado para un control de espacio uniforme */
 }
 
-/* Estilo para reducir el margen interno de las cartas */
-.card-container CustomCard {
-  margin: 5px; 
+/* Ajuste del margen de las tarjetas */
+.card-container .MuiCard-root {
+  margin: 5px;
 }
-
-
