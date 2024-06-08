@@ -37,15 +37,15 @@ const App = () => {
       <Navbar/>
 
 
-<div style={{ position: 'relative', textAlign: 'center', color: 'white', marginTop: '0px' }}>
-  {/* Agregar un pseudo-elemento ::before para oscurecer la imagen de fondo */}
+      <div style={{ position: 'relative', textAlign: 'center', color: 'white', marginTop: '0px' }}>
+  {/* Modificar el overlay para usar un gradiente en lugar de un color sólido */}
   <div style={{
     position: 'absolute',
     top: '0',
     left: '0',
     width: '100%',
     height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // la opacidad 
+    background: 'linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%)', // Gradiente oscuro
     zIndex: '1',
   }}></div>
   <img src="src/assets/banner.webp" alt="Banner" style={{ width: '100%', height: 'auto' }} />
@@ -54,13 +54,26 @@ const App = () => {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    zIndex: '2', // texto y el botón estén por encima del overlay oscuro
+    zIndex: '2',
     padding: '20px',
-    borderRadius: '10px'
+    borderRadius: '10px',
   }}>
-    <h1 style={{ textShadow: '2px 2px 4px #000000' }}>Building Dreams Together</h1>
-    <p style={{ textShadow: '2px 2px 4px #000000' }}>Creating our ideal space with top-notch construction.</p>
-    <button style={{ padding: '10px 20px', fontSize: '16px', backgroundColor: '#ffdb58', color: 'black', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Request consultation</button>
+    {/* Aumentar la sombra del texto para mejorar la visibilidad */}
+    <h1 style={{ textShadow: '3px 3px 6px #000000' }}>Building Dreams Together</h1>
+    <p style={{ textShadow: '3px 3px 6px #000000' }}>Creating our ideal space with top-notch construction.</p>
+    {/* Estilos adicionales para el botón */}
+    <button style={{
+      padding: '10px 20px',
+      fontSize: '16px',
+      backgroundColor: '#ffdb58',
+      color: 'black',
+      borderRadius: '5px',
+      cursor: 'pointer',
+      transition: 'all 0.3s ease', // Transición suave
+    }}
+    onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#f0c040'} // Cambio de color al pasar el mouse
+    onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#ffdb58'} // Volver al color original
+    >Request consultation</button>
   </div>
 </div>
 
