@@ -56,7 +56,9 @@ export default function DrawerAppBar(props: Props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar component="nav" sx={{   
+                 backgroundColor: '#000', /* Base color for browsers that do not support gradients */
+                 background: 'radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%)' /* Gradiente radial */}}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -70,13 +72,13 @@ export default function DrawerAppBar(props: Props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, color: '#ffdb58' /* Mostaza */ }}
           >
             Sam Alexander Construction Inc.
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
+              <Button key={item} sx={{ color: '#ffdb58' /* Mostaza */ }}>
                 {item}
               </Button>
             ))}
