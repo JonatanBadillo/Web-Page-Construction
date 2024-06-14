@@ -79,17 +79,17 @@ const App = () => {
             style={{
               padding: "10px 20px",
               fontSize: "16px",
-              backgroundColor: "#ffdb58",
+              backgroundColor: "#bfa75d",
               color: "black",
               borderRadius: "5px",
               cursor: "pointer",
               transition: "all 0.3s ease", // Transición suave
             }}
             onMouseOver={(e) =>
-              (e.currentTarget.style.backgroundColor = "#f0c040")
+              (e.currentTarget.style.backgroundColor = "#bfa75d")
             } // Cambio de color al pasar el mouse
             onMouseOut={(e) =>
-              (e.currentTarget.style.backgroundColor = "#ffdb58")
+              (e.currentTarget.style.backgroundColor = "#bfa77d")
             } // Volver al color original
           >
             Request consultation

@@ -72,7 +72,7 @@ export default function DrawerAppBar(props: Props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, color: '#ffdb58' /* Mostaza */ }}
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, color: '#bfa75d' /* Mostaza */ }}
           >
             Sam Alexander Construction Inc.
           </Typography>
