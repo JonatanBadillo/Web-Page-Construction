@@ -4,6 +4,9 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import CustomCard from "./Components/Cards/Card";
 import Footer from "./Components/Footer/Footer";
 import Banner from './assets/banner.webp';
+import Company1 from './assets/company.jpg';
+import Company2 from './assets/company2.jpg';
+import Company3 from './assets/company3.jpg';
 
 import Form from "./Components/Form/Form";
 
@@ -100,7 +103,7 @@ const App = () => {
 
       <div className="card-container">
         <CustomCard
-          imageSrc="src/assets/company3.jpg"
+          imageSrc={Company1}
           imageAlt="green iguana"
           title="Our Team"
           description="Meet the talented individuals who make up our company."
@@ -108,7 +111,7 @@ const App = () => {
         />
 
         <CustomCard
-          imageSrc="src/assets/company2.jpg"
+          imageSrc={Company2}
           imageAlt="another description"
           title="Our History"
           description="Discover the story behind our company's founding and growth."
@@ -116,7 +119,7 @@ const App = () => {
         />
 
         <CustomCard
-          imageSrc="src/assets/company.jpg"
+          imageSrc={Company3}
           imageAlt="another description"
           title="Our Services"
           description="Explore the wide range of services we offer to our clients."
