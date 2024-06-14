@@ -3,6 +3,7 @@ import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import CustomCard from "./Components/Cards/Card";
 import Footer from "./Components/Footer/Footer";
+import Banner from './assets/banner.webp';
 
 import Form from "./Components/Form/Form";
 
@@ -52,7 +53,7 @@ const App = () => {
           }}
         ></div>
         <img
-          src="src/assets/banner.webp"
+          src={Banner}
           alt="Banner"
           style={{ width: "100%", height: "auto" }}
         />
