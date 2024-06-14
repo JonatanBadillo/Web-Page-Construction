@@ -78,7 +78,7 @@ export default function DrawerAppBar(props: Props) {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#ffdb58' /* Mostaza */ }}>
+              <Button key={item} sx={{ color: '#bfa75d' /* Mostaza */ }}>
                 {item}
               </Button>
             ))}
@@ -98,7 +98,7 @@ export default function DrawerAppBar(props: Props) {
             display: { xs: 'block', sm: 'none' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth , backgroundColor: '#000', /* Color base para navegadores que no soportan gradientes */
               background: 'radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%)',
-              color: '#ffdb58' /* Gradiente radial */},
+              color: '#bfa75d' /* Gradiente radial */},
           }}
         >
           {drawer}
