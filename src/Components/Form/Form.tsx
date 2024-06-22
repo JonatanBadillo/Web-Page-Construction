@@ -2,7 +2,7 @@ import './Form.css';
 
 const Form = () => {
   return (
-    <div>
+    <div className="form-wrapper">
       <form className="form-container">
         <div className="form-row">
           <div className="form-col">
@@ -25,7 +25,7 @@ const Form = () => {
           </div>
         </div>
         <div className="form-row">
-          <div className="form-col">
+          <div className="form-col-full">
             <label>Reason for contact:</label>
             <select name="reason">
               <option value="inquiry">Project Inquiry</option>

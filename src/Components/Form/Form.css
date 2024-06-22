@@ -1,6 +1,12 @@
+.form-wrapper {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
 .form-container {
-    width: 600px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 800px; /* Ajustar si es necesario */
     margin: auto;
     background-color: #f8f9fa;
     padding: 20px;
@@ -17,6 +23,11 @@
 
 .form-col {
     flex: 0 0 48%; /* Flex basis 48% for two columns with some spacing */
+    margin-bottom: 20px;
+}
+
+.form-col-full {
+    flex: 0 0 100%;
     margin-bottom: 20px;
 }
 
