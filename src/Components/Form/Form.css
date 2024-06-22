@@ -1,7 +1,6 @@
 .form-container {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
+    width: 600px;
+    max-width: 100%;
     margin: auto;
     background-color: #f8f9fa;
     padding: 20px;
@@ -10,9 +9,15 @@
     font-family: 'Arial', sans-serif;
 }
 
-.form-container h2 {
-    text-align: center;
-    color: #495057;
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-col {
+    flex: 0 0 48%; /* Flex basis 48% for two columns with some spacing */
+    margin-bottom: 20px;
 }
 
 .form-container label {
@@ -26,6 +31,7 @@
 .form-container input[type="email"], 
 .form-container input[type="tel"], 
 .form-container select {
+    width: 100%;
     padding: 10px;
     border: 1px solid #ced4da;
     border-radius: 4px;
@@ -44,7 +50,8 @@
 }
 
 .form-container button[type="submit"] {
-    margin-top: 20px;
+    display: block;
+    width: 100%;
     padding: 10px;
     background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
     color: #ffdb58;
@@ -63,4 +70,10 @@
 
 .form-container button[type="submit"]:active {
     transform: scale(1);
+}
+
+@media (max-width: 600px) {
+    .form-col {
+        flex: 0 0 100%;
+    }
 }
