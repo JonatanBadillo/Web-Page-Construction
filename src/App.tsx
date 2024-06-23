@@ -7,6 +7,7 @@ import Banner from './assets/banner.webp';
 import Company1 from './assets/company.jpg';
 import Company2 from './assets/company2.jpg';
 import Company3 from './assets/company3.jpg';
+import WhoWeServe from "./Components/WhoWeServe";
 
 import Form from "./Components/Form/Form";
 
@@ -126,6 +127,9 @@ const App = () => {
           buttonText="Learn More"
         />
       </div>
+
+      <WhoWeServe />
+
 
       <center>
         <h1>Our Work</h1>
