@@ -32,9 +32,9 @@
   }
   
   .service-icon svg {
-    font-size: 4rem;  /* Ajusta el tamaño del icono aquí */
+    font-size: 15rem;  
     margin-bottom: 10px;
-    color: #bfa75d;  /* Cambia el color del icono si lo deseas */
+    color: #bfa75d;  
   }
   
   .service-icon h3 {
