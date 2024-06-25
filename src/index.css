@@ -1,29 +1,33 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
-  
-} 
+}
 
-.container{
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
   width: 100vw;
   min-height: 100vh;
   background: #ced8ff;
 }
 
-.container.dark{
+.container.dark {
   background: #222;
 }
 
 .card-container {
   display: flex;
-  justify-content: center; /* Cambiado a center para evitar espacio extra */
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 10px; /* Agregado para un control de espacio uniforme */
+  gap: 10px;
 }
 
-/* Ajuste del margen de las tarjetas */
 .card-container .MuiCard-root {
   margin: 5px;
 }

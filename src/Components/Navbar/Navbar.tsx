@@ -15,11 +15,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 interface Props {
-    /**
-     * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
-     */
-    window?: () => Window;
+  window?: () => Window;
 }
 
 const drawerWidth = 240;
@@ -36,7 +32,7 @@ export default function DrawerAppBar(props: Props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-      Sam Alexander Construction Inc.
+        Sam Alexander Construction Inc.
       </Typography>
       <Divider />
       <List>
@@ -54,11 +50,11 @@ export default function DrawerAppBar(props: Props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', marginBottom: 0 }}>
       <CssBaseline />
       <AppBar component="nav" sx={{   
-                 backgroundColor: '#000', /* Base color for browsers that do not support gradients */
-                 background: 'radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%)' /* Gradiente radial */}}>
+        backgroundColor: '#000',
+        background: 'radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%)' }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -72,13 +68,13 @@ export default function DrawerAppBar(props: Props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, color: '#bfa75d' /* Mostaza */ }}
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, color: '#bfa75d' }}
           >
             Sam Alexander Construction Inc.
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#bfa75d' /* Mostaza */ }}>
+              <Button key={item} sx={{ color: '#bfa75d' }}>
                 {item}
               </Button>
             ))}
@@ -92,22 +88,16 @@ export default function DrawerAppBar(props: Props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth , backgroundColor: '#000', /* Color base para navegadores que no soportan gradientes */
-              background: 'radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%)',
-              color: '#bfa75d' /* Gradiente radial */},
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth , backgroundColor: '#000', background: 'radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%)', color: '#bfa75d'  },
           }}
         >
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
-        
-      </Box>
     </Box>
   );
 }

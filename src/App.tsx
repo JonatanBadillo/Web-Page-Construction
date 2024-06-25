@@ -8,7 +8,6 @@ import Company1 from './assets/company.jpg';
 import Company2 from './assets/company2.jpg';
 import Company3 from './assets/company3.jpg';
 import WhoWeServe from "./Components/WhoWeServe";
-
 import Form from "./Components/Form/Form";
 
 const App = () => {
@@ -34,16 +33,14 @@ const App = () => {
   return (
     <div>
       <Navbar />
-
       <div
         style={{
           position: "relative",
           textAlign: "center",
           color: "white",
-          marginTop: "0px",
+          marginTop: "0px", // Asegúrate de que este estilo esté presente
         }}
       >
-        {/* Modificar el overlay para usar un gradiente en lugar de un color sólido */}
         <div
           style={{
             position: "absolute",
@@ -52,14 +49,14 @@ const App = () => {
             width: "100%",
             height: "100%",
             background:
-              "linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%)", // Gradiente oscuro
+              "linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%)",
             zIndex: "1",
           }}
         ></div>
         <img
           src={Banner}
           alt="Banner"
-          style={{ width: "100%", height: "auto" }}
+          style={{ width: "100%", height: "auto", display: "block" }}
         />
         <div
           style={{
@@ -72,14 +69,12 @@ const App = () => {
             borderRadius: "10px",
           }}
         >
-          {/* Aumentar la sombra del texto para mejorar la visibilidad */}
           <h1 style={{ textShadow: "3px 3px 6px #000000" }}>
             Building Dreams Together
           </h1>
           <p style={{ textShadow: "3px 3px 6px #000000" }}>
             Creating our ideal space with top-notch construction.
           </p>
-          {/* Estilos adicionales para el botón */}
           <button
             style={{
               padding: "10px 20px",
@@ -88,14 +83,14 @@ const App = () => {
               color: "black",
               borderRadius: "5px",
               cursor: "pointer",
-              transition: "all 0.3s ease", // Transición suave
+              transition: "all 0.3s ease",
             }}
             onMouseOver={(e) =>
               (e.currentTarget.style.backgroundColor = "#bfa75d")
-            } // Cambio de color al pasar el mouse
+            }
             onMouseOut={(e) =>
               (e.currentTarget.style.backgroundColor = "#bfa77d")
-            } // Volver al color original
+            }
           >
             Request consultation
           </button>
@@ -129,7 +124,6 @@ const App = () => {
       </div>
 
       <WhoWeServe />
-
 
       <center>
         <h1>Our Work</h1>
