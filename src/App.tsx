@@ -9,6 +9,7 @@ import Company2 from './assets/company2.jpg';
 import Company3 from './assets/company3.jpg';
 import WhoWeServe from "./Components/WhoWeServe";
 import Form from "./Components/Form/Form";
+import "./index.css"; // Asegúrate de importar el archivo de estilos
 
 const App = () => {
   const images = [
@@ -33,64 +34,21 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <div
-        style={{
-          position: "relative",
-          textAlign: "center",
-          color: "white",
-          marginTop: "0px", // Asegúrate de que este estilo esté presente
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            top: "0",
-            left: "0",
-            width: "100%",
-            height: "100%",
-            background:
-              "linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%)",
-            zIndex: "1",
-          }}
-        ></div>
+
+      <div className="banner-container">
+        <div className="banner-overlay"></div>
         <img
           src={Banner}
           alt="Banner"
-          style={{ width: "100%", height: "auto", display: "block" }}
+          className="banner-image"
         />
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            zIndex: "2",
-            padding: "20px",
-            borderRadius: "10px",
-          }}
-        >
-          <h1 style={{ textShadow: "3px 3px 6px #000000" }}>
-            Building Dreams Together
-          </h1>
-          <p style={{ textShadow: "3px 3px 6px #000000" }}>
-            Creating our ideal space with top-notch construction.
-          </p>
+        <div className="banner-text">
+          {/* Aumentar la sombra del texto */}
+          <h1>Building Dreams Together</h1>
+          <p>Creating our ideal space with top-notch construction.</p>
+          {/* Estilos para el botón */}
           <button
-            style={{
-              padding: "10px 20px",
-              fontSize: "16px",
-              backgroundColor: "#bfa75d",
-              color: "black",
-              borderRadius: "5px",
-              cursor: "pointer",
-              transition: "all 0.3s ease",
-            }}
-            onMouseOver={(e) =>
-              (e.currentTarget.style.backgroundColor = "#bfa75d")
-            }
-            onMouseOut={(e) =>
-              (e.currentTarget.style.backgroundColor = "#bfa77d")
-            }
+            className="banner-button"
           >
             Request consultation
           </button>

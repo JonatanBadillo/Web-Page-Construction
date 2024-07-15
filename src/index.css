@@ -5,12 +5,6 @@
   font-family: sans-serif;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
 .container {
   width: 100vw;
   min-height: 100vh;
@@ -23,11 +17,79 @@ html, body {
 
 .card-container {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Cambiado a center para evitar espacio extra */
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 10px; /* Agregado para un control de espacio uniforme */
 }
 
+/* Ajuste del margen de las tarjetas */
 .card-container .MuiCard-root {
   margin: 5px;
+}
+
+.banner-container {
+  position: relative;
+  text-align: center;
+  color: white;
+  margin-top: 0px;
+  overflow: hidden; /* Asegura que el contenido adicional no se desborde */
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%); /* Gradiente oscuro */
+  z-index: 1;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.banner-text h1, .banner-text p {
+  text-shadow: 3px 3px 6px #000000;
+}
+
+.banner-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #bfa75d;
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+.banner-button:hover {
+  background-color: #bfa75d; /* Cambio de color al pasar el mouse */
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  .banner-text h1 {
+    font-size: 24px;
+  }
+
+  .banner-text p {
+    font-size: 14px;
+  }
+
+  .banner-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
 }
