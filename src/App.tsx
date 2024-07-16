@@ -9,6 +9,7 @@ import Company2 from './assets/company2.jpg';
 import Company3 from './assets/company3.jpg';
 import WhoWeServe from "./Components/WhoWeServe";
 import Form from "./Components/Form/Form";
+import Comments from "./Components/Comments/Comments"; // Importar el nuevo componente de comentarios
 import "./index.css"; // Asegúrate de importar el archivo de estilos
 
 const App = () => {
@@ -36,6 +37,7 @@ const App = () => {
       <Navbar />
 
       <div className="banner-container">
+       
         <div className="banner-overlay"></div>
         <img
           src={Banner}
@@ -43,10 +45,10 @@ const App = () => {
           className="banner-image"
         />
         <div className="banner-text">
-          {/* Aumentar la sombra del texto */}
+        
           <h1>Building Dreams Together</h1>
           <p>Creating our ideal space with top-notch construction.</p>
-          {/* Estilos para el botón */}
+          
           <button
             className="banner-button"
           >
@@ -91,6 +93,9 @@ const App = () => {
       </div>
 
       <Form />
+
+      <Comments /> 
+
       <Footer />
     </div>
   );
