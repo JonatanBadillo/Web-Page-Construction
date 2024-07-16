@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { TextField, Button, Card, CardContent, Typography, Box } from "@mui/material";
 
 const Comments = () => {
   const [comments, setComments] = useState<string[]>([]);
   const [comment, setComment] = useState("");
 
-  const handleCommentChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleCommentChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setComment(event.target.value);
   };
 
@@ -16,22 +17,31 @@ const Comments = () => {
   };
 
   return (
-    <div className="comments-section">
-      <h2>Comments</h2>
-      <textarea
+    <Box sx={{ padding: 3, backgroundColor: "#f4f4f4", marginTop: 3, borderRadius: 2 }}>
+      <Typography variant="h4" gutterBottom>Comments</Typography>
+      <TextField
+        fullWidth
+        variant="outlined"
+        label="Write a comment..."
         value={comment}
         onChange={handleCommentChange}
-        placeholder="Write a comment..."
-      ></textarea>
-      <button onClick={handleCommentSubmit}>Post Comment</button>
-      <div className="comments-list">
+        multiline
+        rows={4}
+        sx={{ marginBottom: 2 }}
+      />
+      <Button variant="contained" color="primary" onClick={handleCommentSubmit}>
+        Post Comment
+      </Button>
+      <Box sx={{ marginTop: 3 }}>
         {comments.map((comment, index) => (
-          <div key={index} className="comment">
-            {comment}
-          </div>
+          <Card key={index} sx={{ marginBottom: 2 }}>
+            <CardContent>
+              <Typography variant="body1">{comment}</Typography>
+            </CardContent>
+          </Card>
         ))}
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 

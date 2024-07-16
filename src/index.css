@@ -17,12 +17,11 @@
 
 .card-container {
   display: flex;
-  justify-content: center; /* Cambiado a center para evitar espacio extra */
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 10px; /* Agregado para un control de espacio uniforme */
+  gap: 10px;
 }
 
-/* Ajuste del margen de las tarjetas */
 .card-container .MuiCard-root {
   margin: 5px;
 }
@@ -32,7 +31,7 @@
   text-align: center;
   color: white;
   margin-top: 0px;
-  overflow: hidden; /* Asegura que el contenido adicional no se desborde */
+  overflow: hidden;
 }
 
 .banner-overlay {
@@ -41,7 +40,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%); /* Gradiente oscuro */
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%);
   z-index: 1;
 }
 
@@ -71,14 +70,13 @@
   color: black;
   border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s ease; /* Transición suave */
+  transition: all 0.3s ease;
 }
 
 .banner-button:hover {
-  background-color: #bfa75d; /* Cambio de color al pasar el mouse */
+  background-color: #bfa75d;
 }
 
-/* Media queries para pantallas pequeñas */
 @media (max-width: 768px) {
   .banner-text h1 {
     font-size: 24px;
@@ -92,50 +90,4 @@
     padding: 8px 16px;
     font-size: 14px;
   }
-}
-
-/* Estilos para la sección de comentarios */
-.comments-section {
-  padding: 20px;
-  background-color: #f4f4f4;
-  margin-top: 20px;
-}
-
-.comments-section h2 {
-  margin-bottom: 10px;
-}
-
-.comments-section textarea {
-  width: 100%;
-  height: 100px;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-.comments-section button {
-  padding: 10px 20px;
-  background-color: #bfa75d;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease; /* Transición suave */
-}
-
-.comments-section button:hover {
-  background-color: #bfa77d; /* Cambio de color al pasar el mouse */
-}
-
-.comments-list {
-  margin-top: 20px;
-}
-
-.comment {
-  background-color: white;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
