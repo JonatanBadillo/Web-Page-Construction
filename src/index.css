@@ -30,10 +30,10 @@
   position: relative;
   text-align: center;
   color: white;
-  margin-top: 0px;
+  margin-top: 0;
   overflow: hidden;
   width: 100%;
-  height: auto;
+  height: 100vh; /* Ajuste inicial para la altura */
 }
 
 .banner-overlay {
@@ -48,7 +48,8 @@
 
 .banner-image {
   width: 100%;
-  height: auto;
+  height: 100%; /* Cambiado para llenar el contenedor */
+  object-fit: cover; /* Asegura que la imagen cubra toda el área */
 }
 
 .banner-text {
@@ -81,6 +82,10 @@
 }
 
 @media (max-width: 768px) {
+  .banner-container {
+    height: 70vh; /* Incrementa la altura para pantallas pequeñas */
+  }
+
   .banner-text h1 {
     font-size: 24px;
   }
