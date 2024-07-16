@@ -1,47 +1,38 @@
-import React, { useState } from "react";
-import { TextField, Button, Card, CardContent, Typography, Box } from "@mui/material";
+import React, { useState } from 'react';
+import './Comments.css';
 
 const Comments = () => {
   const [comments, setComments] = useState<string[]>([]);
-  const [comment, setComment] = useState("");
+  const [newComment, setNewComment] = useState<string>('');
 
-  const handleCommentChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setComment(event.target.value);
+  const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setNewComment(event.target.value);
   };
 
-  const handleCommentSubmit = () => {
-    if (comment.trim() !== "") {
-      setComments([...comments, comment]);
-      setComment("");
+  const handlePostComment = () => {
+    if (newComment.trim()) {
+      setComments([...comments, newComment]);
+      setNewComment('');
     }
   };
 
   return (
-    <Box sx={{ padding: 3, backgroundColor: "#f4f4f4", marginTop: 3, borderRadius: 2 }}>
-      <Typography variant="h4" gutterBottom>Comments</Typography>
-      <TextField
-        fullWidth
-        variant="outlined"
-        label="Write a comment..."
-        value={comment}
-        onChange={handleCommentChange}
-        multiline
-        rows={4}
-        sx={{ marginBottom: 2 }}
-      />
-      <Button variant="contained" color="primary" onClick={handleCommentSubmit}>
-        Post Comment
-      </Button>
-      <Box sx={{ marginTop: 3 }}>
+    <div className="comments-section">
+      <h2>Comments</h2>
+      <textarea
+        placeholder="Write a comment..."
+        value={newComment}
+        onChange={handleInputChange}
+      ></textarea>
+      <button onClick={handlePostComment}>POST COMMENT</button>
+      <div className="comments-list">
         {comments.map((comment, index) => (
-          <Card key={index} sx={{ marginBottom: 2 }}>
-            <CardContent>
-              <Typography variant="body1">{comment}</Typography>
-            </CardContent>
-          </Card>
+          <div className="comment" key={index}>
+            {comment}
+          </div>
         ))}
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 };
 
