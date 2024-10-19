@@ -68,13 +68,13 @@ export default function DrawerAppBar(props: Props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, color: '#bfa75d' }}
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, color: '#ffd00e' }}
           >
             Sam Alexander Construction Inc.
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#bfa75d' }}>
+              <Button key={item} sx={{ color: '#ffd00e' }}>
                 {item}
               </Button>
             ))}
@@ -92,7 +92,7 @@ export default function DrawerAppBar(props: Props) {
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth , backgroundColor: '#000', background: 'radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%)', color: '#bfa75d'  },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth , backgroundColor: '#000', background: 'radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%)', color: '#ffd00e'  },
           }}
         >
           {drawer}
