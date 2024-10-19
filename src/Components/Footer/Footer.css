@@ -3,21 +3,23 @@
   flex-direction: column;
   align-items: center;
   padding: 60px 20px;
-  background: linear-gradient(145deg, #0a0a0a, #2e2e2e); /* Gradiente de negro */
+  background: linear-gradient(145deg, #1c1c1c, #3e3e3e); /* Gradiente más dinámico */
   color: #ffd00e; /* Color de texto mostaza */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
   border-top: 5px solid #ffd00e; /* Borde superior mostaza para un toque de diseño */
+  position: relative;
+  overflow: hidden; /* Para esconder el pseudo-elemento */
 }
 
 .footer-title {
   margin-bottom: 30px;
-  font-size: 28px;
+  font-size: 32px; /* Tamaño de fuente más grande */
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
   text-align: center;
-  color: #ffd00e; /* Color de texto mostaza */
+  animation: fadeIn 1s ease-in; /* Animación de aparición */
 }
 
 .sponsors-container {
@@ -25,16 +27,128 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
+  animation: slideUp 1s ease-in-out; /* Animación de desplazamiento */
+  position: relative; /* Para posicionar el pseudo-elemento */
 }
 
 .sponsor-image {
-  height: 60px;
-  transition: transform 0.3s ease;
+  height: 70px; /* Aumento de tamaño */
+  transition: transform 0.4s ease, box-shadow 0.4s ease; /* Transiciones suaves */
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+  opacity: 0.9; /* Opacidad suave */
+  filter: brightness(1.1); /* Brillo adicional */
+  animation: bounce 0.5s ease forwards; /* Animación de rebote */
 }
 
 .sponsor-image:hover {
-  transform: scale(1.15);
+  transform: scale(1.2);
   cursor: pointer;
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5); /* Sombra más pronunciada al pasar el mouse */
+  opacity: 1; /* Opacidad completa al pasar el mouse */
+}
+
+/* Estilos para enlaces y secciones adicionales */
+.footer-links,
+.footer-contact,
+.footer-social {
+  margin: 20px 0;
+  text-align: center; /* Centrar texto */
+  animation: fadeIn 0.5s ease; /* Animación de aparición */
+}
+
+.footer-subtitle {
+  font-size: 24px; /* Tamaño de fuente más grande */
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  animation: fadeIn 0.5s ease; /* Animación de aparición */
+  position: relative; /* Para el efecto */
+}
+
+.footer-links ul {
+  list-style: none; /* Sin viñetas */
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 8px 0;
+}
+
+.footer-links a {
+  color: #ffd00e; /* Color de texto mostaza */
+  text-decoration: none; /* Sin subrayado */
+  transition: color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+  position: relative; /* Para el efecto */
+}
+
+.footer-links a:hover {
+  color: #dab635; /* Color dorado más claro al pasar el mouse */
+  transform: translateY(-3px); /* Desplazamiento hacia arriba */
+}
+
+/* Estilos para los íconos de redes sociales */
+.social-icons {
+  display: flex;
+  justify-content: center; /* Centrar los íconos */
+  gap: 15px; /* Espacio entre íconos */
+}
+
+.social-icon {
+  display: inline-block;
+  padding: 10px 15px; /* Espaciado interno */
+  background: rgba(50, 50, 50, 0.8); /* Fondo oscuro */
+  border-radius: 20px; /* Bordes redondeados */
+  color: #ffd00e; /* Color de texto mostaza */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: bold; /* Texto en negrita */
+  transition: transform 0.3s ease, background 0.3s ease; /* Transiciones suaves */
+  position: relative; /* Para el efecto */
+}
+
+.social-icon:hover {
+  background: rgba(255, 215, 0, 0.2); /* Fondo dorado claro al pasar el mouse */
+  transform: scale(1.1); /* Aumentar el ícono al pasar el mouse */
+}
+
+/* Estilos para la parte inferior del footer */
+.footer-bottom {
+  margin-top: 30px;
+  font-size: 16px; /* Tamaño de fuente más grande */
+  text-align: center;
+  animation: fadeIn 0.5s ease; /* Animación de aparición */
+  position: relative; /* Para el efecto */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* Comienza invisible */
+  }
+  100% {
+    opacity: 1; /* Hace visible */
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(20px); /* Desplazamiento hacia abajo */
+    opacity: 0; /* Comienza invisible */
+  }
+  100% {
+    transform: translateY(0); /* Vuelve a la posición original */
+    opacity: 1; /* Hacer visible */
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); /* Sin desplazamiento */
+  }
+  40% {
+    transform: translateY(-10px); /* Rebote hacia arriba */
+  }
+  60% {
+    transform: translateY(-5px); /* Rebote más pequeño */
+  }
 }
