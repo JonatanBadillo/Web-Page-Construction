@@ -59,21 +59,27 @@ const App = () => {
           imageSrc={Company1}
           imageAlt="green iguana"
           title="Our Team"
-          description="Meet the talented individuals who make up our company."
+          // description="Meet the talented individuals who make up our company."
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus. lore
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus."
           buttonText="LinkedIn"
         />
         <CustomCard
           imageSrc={Company2}
           imageAlt="another description"
           title="Our History"
-          description="Discover the story behind our company's founding and growth."
+          // description="Discover the story behind our company's founding and growth."
+           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus. lore
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus."
           buttonText="Learn More"
         />
         <CustomCard
           imageSrc={Company3}
           imageAlt="another description"
           title="Our Services"
-          description="Explore the wide range of services we offer to our clients."
+          // description="Explore the wide range of services we offer to our clients."
+           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus. lore
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus."
           buttonText="Learn More"
         />
       </div>

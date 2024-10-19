@@ -1,45 +1,122 @@
 .who-we-serve {
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
+  background-color: #1c1c1c; /* Fondo más suave */
+  color: white;
+  text-align: center;
+  padding: 80px 20px; /* Espaciado generoso */
+  transition: background-color 0.3s ease; /* Transición suave */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8); /* Sombra para profundidad */
+}
+
+.who-we-serve:hover {
+  background-color: #0d0d0d; /* Fondo al pasar el mouse */
+}
+
+.who-we-serve h2 {
+  color: #ffd00e;
+  font-size: 3rem; /* Tamaño más grande */
+  margin-bottom: 20px;
+  animation: fadeIn 0.5s ease; /* Animación de entrada */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Sombra más pronunciada */
+}
+
+.who-we-serve p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  animation: fadeIn 0.7s ease; /* Animación de entrada */
+  max-width: 800px; /* Limitar ancho del texto */
+  margin-left: auto; /* Centrar */
+  margin-right: auto; /* Centrar */
+  line-height: 1.6; /* Mejora la legibilidad */
+  padding: 0 10px; /* Espaciado lateral */
+  border-left: 5px solid #ffd00e; /* Línea izquierda decorativa */
+}
+
+.service-icons {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  opacity: 0; /* Ocultar inicialmente */
+  animation: fadeInUp 0.5s ease forwards; /* Animación de entrada */
+  animation-delay: 0.5s; /* Retraso */
+}
+
+.service-icon {
+  flex: 1 1 30%;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Añadir transición para sombra */
+  position: relative; /* Necesario para efectos de sombra */
+  background: rgba(255, 255, 255, 0.1); /* Fondo transparente */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  backdrop-filter: blur(5px); /* Efecto de desenfoque de fondo */
+}
+
+.service-icon:hover {
+  transform: translateY(-15px); /* Moverse hacia arriba en hover */
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.7); /* Sombra dorada */
+  animation: pulse 0.6s ease; /* Efecto de pulso al pasar el mouse */
+}
+
+.service-icon svg {
+  font-size: 12rem; /* Tamaño de íconos */
+  margin-bottom: 15px; /* Aumentar el espacio debajo de los íconos */
+  color: #ffd00e; /* Color dorado */
+  transition: color 0.3s ease, transform 0.3s ease; /* Transición suave */
+}
+
+.service-icon:hover svg {
+  color: #e7be18; /* Cambio de color en hover */
+  transform: rotate(15deg); /* Rotar más en hover */
+}
+
+.service-icon h3 {
+  color: white;
+  font-size: 1.8rem; /* Tamaño de texto aumentado */
+  margin-top: 10px;
+  transition: color 0.3s ease; /* Transición suave */
+}
+
+.service-icon:hover h3 {
+  color: #ffd00e; /* Cambio de color en hover */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4); /* Sombra de texto más pronunciada */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px); /* Movimiento hacia arriba */
   }
-  
-  .who-we-serve h2 {
-    color: #ffd00e;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .who-we-serve p {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Movimiento hacia abajo */
   }
-  
-  .service-icons {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .service-icon {
-    flex: 1 1 30%;
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
   }
-  
-  .service-icon svg {
-    font-size: 15rem;  
-    margin-bottom: 10px;
-    color: #ffd00e;  
+  50% {
+    transform: scale(1.05);
   }
-  
-  .service-icon h3 {
-    color: white;
-    font-size: 1.5rem;
-    margin-top: 10px;
+  100% {
+    transform: scale(1);
   }
-  
+}
