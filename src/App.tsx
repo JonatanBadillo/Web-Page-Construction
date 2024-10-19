@@ -3,7 +3,7 @@ import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import CustomCard from "./Components/Cards/Card";
 import Footer from "./Components/Footer/Footer";
-import Banner from "./assets/vid1.mov";
+import Banner from "./assets/vid1.mp4";
 import Company1 from "./assets/company.jpg";
 import Company2 from "./assets/company2.jpg";
 import Company3 from "./assets/company3.jpg";
