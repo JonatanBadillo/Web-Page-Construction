@@ -47,7 +47,7 @@ const App = () => {
           muted
         />
         <div className="banner-text">
-          <h1>Building Dreams Together</h1>
+          <h1>Building Dreams Together:</h1>
           <p>Creating our ideal space with top-notch construction.</p>
           
           <button className="banner-button">
