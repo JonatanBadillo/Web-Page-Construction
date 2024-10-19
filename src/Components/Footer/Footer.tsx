@@ -1,13 +1,13 @@
-
 import './Footer.css'; 
+import Sponsor from "../../assets/sponsor.png";
 
 const Footer = () => {
   const sponsors = [
-    { src: 'src/assets/sponsor.png', alt: 'Enterprise 1' },
-    { src: 'src/assets/sponsor.png', alt: 'Enterprise 2' },
-    { src: 'src/assets/sponsor.png', alt: 'Enterprise 3' },
-    { src: 'src/assets/sponsor.png', alt: 'Enterprise 4' },
-    // Agrega más patrocinadores aquí
+    { src: Sponsor, alt: 'Enterprise 1' },
+    { src: Sponsor, alt: 'Enterprise 2' },
+    { src: Sponsor, alt: 'Enterprise 3' },
+    { src: Sponsor, alt: 'Enterprise 4' },
+
   ];
 
   return (
