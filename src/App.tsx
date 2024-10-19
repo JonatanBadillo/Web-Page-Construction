@@ -3,14 +3,15 @@ import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import CustomCard from "./Components/Cards/Card";
 import Footer from "./Components/Footer/Footer";
-import Banner from './assets/banner.webp';
+import Banner from './assets/vid1.mov'; 
 import Company1 from './assets/company.jpg';
 import Company2 from './assets/company2.jpg';
 import Company3 from './assets/company3.jpg';
 import WhoWeServe from "./Components/WhoWeServe";
 import Form from "./Components/Form/Form";
-import Comments from "./Components/Comments/Comments"; // Importar el nuevo componente de comentarios
-import "./index.css"; // Asegúrate de importar el archivo de estilos
+import Comments from "./Components/Comments/Comments"; 
+
+import "./index.css";
 
 const App = () => {
   const images = [
@@ -37,21 +38,19 @@ const App = () => {
       <Navbar />
 
       <div className="banner-container">
-       
         <div className="banner-overlay"></div>
-        <img
-          src={Banner}
-          alt="Banner"
-          className="banner-image"
+        <video
+          src={Banner} // Usa la ruta de tu video aquí
+          
+          autoPlay
+          loop
+          muted
         />
         <div className="banner-text">
-        
           <h1>Building Dreams Together</h1>
           <p>Creating our ideal space with top-notch construction.</p>
           
-          <button
-            className="banner-button"
-          >
+          <button className="banner-button">
             Request consultation
           </button>
         </div>
