@@ -2,7 +2,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import {  CardActionArea } from '@mui/material';
 
 interface CardProps {
   imageSrc: string;
@@ -12,16 +12,18 @@ interface CardProps {
   buttonText: string;
 }
 
-const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, description, buttonText }) => {
+const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, description}) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: '60vh' }}>
       <CardActionArea>
         <CardMedia
           component="img"
-          height="140"
+          height="280"
           image={imageSrc}
           alt={imageAlt}
+          
         />
+        <br></br>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {title}
@@ -31,11 +33,7 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          {buttonText}
-        </Button>
-      </CardActions>
+      
     </Card>
   );
 }
