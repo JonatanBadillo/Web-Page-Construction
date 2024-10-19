@@ -20,7 +20,7 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About Us', 'Our Work', 'Contact Us'];
+const navItems = ['Home', 'About Us', 'Our Work', 'Contact Us','Opinions'];
 
 // Definimos un keyframe para la animación de elevación
 const elevateAnimation = keyframes`
