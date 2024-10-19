@@ -130,15 +130,22 @@
   .form-container input[type="email"],
   .form-container input[type="tel"],
   .form-container select {
-    width: 100%;
-    padding: 12px; /* Aumentar padding */
+    width: 100%; /* Mantener el ancho completo */
+    padding: 12px; /* Espaciado interno */
     border: 1px solid #ced4da;
     border-radius: 8px; /* Bordes redondeados */
     font-size: 16px;
     color: #fff; /* Texto blanco */
     background-color: rgba(50, 50, 50, 0.8); /* Fondo oscuro para entradas */
     transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transición para enfoque */
+    max-width: 600px; /* Ancho máximo para hacerlo más ancho */
+    margin: 0 auto; /* Centrar el elemento */
   }
+  
+  .form-container select option {
+    padding: 10px; /* Espaciado interno de las opciones */
+  }
+  
   
   .form-container input[type="text"]:focus,
   .form-container input[type="email"]:focus,
