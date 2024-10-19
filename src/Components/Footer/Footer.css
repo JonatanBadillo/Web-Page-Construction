@@ -4,9 +4,9 @@
   align-items: center;
   padding: 60px 20px;
   background: linear-gradient(145deg, #0a0a0a, #2e2e2e); /* Gradiente de negro */
-  color: #bfa75d; /* Color de texto mostaza */
+  color: #ffd00e; /* Color de texto mostaza */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-top: 5px solid #bfa75d; /* Borde superior mostaza para un toque de diseño */
+  border-top: 5px solid #ffd00e; /* Borde superior mostaza para un toque de diseño */
 }
 
 .footer-title {
@@ -17,7 +17,7 @@
   letter-spacing: 2px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   text-align: center;
-  color: #bfa75d; /* Color de texto mostaza */
+  color: #ffd00e; /* Color de texto mostaza */
 }
 
 .sponsors-container {
