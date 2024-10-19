@@ -35,14 +35,13 @@ const App = () => {
   ];
 
   return (
-    <div>
+    <div className="app-container"> {/* Añadimos la clase 'app-container' */}
       <Navbar />
-
+  
       <div className="banner-container">
         <div className="banner-overlay"></div>
         <video
-          src={Banner} // Usa la ruta de tu video aquí
-          
+          src={Banner}
           autoPlay
           loop
           muted
@@ -50,13 +49,11 @@ const App = () => {
         <div className="banner-text">
           <h1>Building Dreams Together:</h1>
           <p>Creating our ideal space with top-notch construction.</p>
-          
-          <button className="banner-button">
-            Request consultation
-          </button>
+          <button className="banner-button">Request consultation</button>
         </div>
       </div>
-
+  
+  <br></br>
       <div className="card-container">
         <CustomCard
           imageSrc={Company1}
@@ -65,7 +62,6 @@ const App = () => {
           description="Meet the talented individuals who make up our company."
           buttonText="LinkedIn"
         />
-
         <CustomCard
           imageSrc={Company2}
           imageAlt="another description"
@@ -73,7 +69,6 @@ const App = () => {
           description="Discover the story behind our company's founding and growth."
           buttonText="Learn More"
         />
-
         <CustomCard
           imageSrc={Company3}
           imageAlt="another description"
@@ -82,23 +77,19 @@ const App = () => {
           buttonText="Learn More"
         />
       </div>
-
+  
       <WhoWeServe />
-
-      <center>
-        <h1>Our Work</h1>
-      </center>
+      <center><h1>Our Work</h1></center>
       <div>
         <ImageGallery items={images} showBullets={true} />
       </div>
-
+  
       <Form />
-
-      <Comments /> 
-
+      <Comments />
       <Footer />
     </div>
   );
+  
 };
 
 export default App;

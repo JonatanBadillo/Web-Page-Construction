@@ -5,6 +5,13 @@
   font-family: sans-serif;
 }
 
+/* Aplica el fondo negro solo al contenedor principal */
+.app-container {
+  background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+  color: #ffd00e;
+}
+
+
 .container {
   width: 100vw;
   min-height: 100vh;
@@ -70,10 +77,11 @@
 
 .banner-button {
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 26px;
   background-color: #ffd00e;
   color: black;
-  border-radius: 5px;
+  font-weight: bold;
+
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -84,20 +92,20 @@
 
 @media (max-width: 768px) {
   .banner-container {
-    height: 70vh; /*  altura para pantallas pequeñas */
+    height: 100vh; /*  altura para pantallas pequeñas */
   }
 
   .banner-text h1 {
-    font-size: 24px;
+    font-size: 34px;
   }
 
   .banner-text p {
-    font-size: 14px;
+    font-size: 20px;
   }
 
   .banner-button {
     padding: 8px 16px;
-    font-size: 14px;
+    font-size: 19px;
   }
 
   .banner-text {

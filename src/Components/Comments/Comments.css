@@ -1,6 +1,6 @@
 .comments-section {
     padding: 20px;
-    background-color: #f4f4f4;
+    
     margin-top: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -9,7 +9,7 @@
   .comments-section h2 {
     margin-bottom: 10px;
     font-size: 24px;
-    color: #333;
+    color: #ffd00e;
   }
   
   .comments-section textarea {
