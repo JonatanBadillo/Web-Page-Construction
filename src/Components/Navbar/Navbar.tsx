@@ -13,13 +13,27 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { keyframes } from '@mui/system';
 
 interface Props {
   window?: () => Window;
 }
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About Us','Our Work' ,'Contact Us'];
+const navItems = ['Home', 'About Us', 'Our Work', 'Contact Us'];
+
+// Definimos un keyframe para la animación de elevación
+const elevateAnimation = keyframes`
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+`;
 
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
@@ -34,11 +48,20 @@ export default function DrawerAppBar(props: Props) {
       <Typography variant="h6" sx={{ my: 2 }}>
         Sam Alexander Construction Inc.
       </Typography>
-      <Divider />
+      <Divider sx={{ backgroundColor: '#ffd00e' }} />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
+            <ListItemButton 
+              sx={{ 
+                textAlign: 'center', 
+                transition: 'background-color 0.3s, transform 0.3s', 
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 208, 14, 0.2)', // Color de fondo en hover
+                  animation: `${elevateAnimation} 0.5s ease` // Animación al hacer hover
+                }
+              }}
+            >
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
@@ -54,7 +77,9 @@ export default function DrawerAppBar(props: Props) {
       <CssBaseline />
       <AppBar component="nav" sx={{   
         backgroundColor: '#000',
-        background: 'radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%)' }}>
+        background: 'radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%)',
+        boxShadow: 'none' // Eliminar sombra de la AppBar
+      }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -68,13 +93,34 @@ export default function DrawerAppBar(props: Props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, color: '#ffd00e' }}
+            sx={{ 
+              flexGrow: 1, 
+              display: { xs: 'none', sm: 'block' }, 
+              color: '#ffd00e', 
+              fontWeight: 'bold', 
+              letterSpacing: 2,
+              transition: 'transform 0.3s',
+              '&:hover': {
+                transform: 'scale(1.05)', // Efecto de zoom al pasar el mouse
+              }
+            }}
           >
             Sam Alexander Construction Inc.
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#ffd00e' }}>
+              <Button 
+                key={item} 
+                sx={{ 
+                  color: '#ffd00e', 
+                  transition: 'color 0.3s, transform 0.3s',
+                  '&:hover': {
+                    color: '#fff', // Cambiar color al pasar el mouse
+                    transform: 'scale(1.1)', // Efecto de zoom
+                    transition: 'transform 0.3s', // Transición suave
+                  } 
+                }}
+              >
                 {item}
               </Button>
             ))}
@@ -92,7 +138,14 @@ export default function DrawerAppBar(props: Props) {
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth , backgroundColor: '#000', background: 'radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%)', color: '#ffd00e'  },
+            '& .MuiDrawer-paper': { 
+              boxSizing: 'border-box', 
+              width: drawerWidth,
+              backgroundColor: '#000', 
+              background: 'radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%)',
+              color: '#ffd00e',
+              transition: 'transform 0.3s ease', // Transición suave para el Drawer
+            },
           }}
         >
           {drawer}
