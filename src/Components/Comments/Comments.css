@@ -34,7 +34,8 @@
   }
   
   .comments-section button:hover {
-    background-color: #a88b5e;
+    background-color: #ffd00e;
+    color: black;
   }
   
   .comments-list {
