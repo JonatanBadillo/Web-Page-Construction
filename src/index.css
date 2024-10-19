@@ -121,3 +121,112 @@
     width: 90%; /* Ajustar el ancho */
   }
 }
+
+
+
+
+/*Gallery*/
+.section-title {
+  font-size: 4rem; /* Aumentar el tamaño del texto */
+  color: #ffd00e; /* Color dorado */
+  text-align: center; /* Centrar el texto */
+  margin: 40px 0; /* Espacio superior e inferior */
+  position: relative; /* Para posicionar el pseudo-elemento */
+  display: inline-block; /* Para aplicar margen y alineación */
+  overflow: hidden; /* Ocultar el desbordamiento */
+  font-family: 'Montserrat', sans-serif; /* Fuente moderna */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 2px; /* Espaciado entre letras */
+}
+
+/* Efecto de subrayado animado */
+.section-title:after {
+  content: ''; /* Pseudo-elemento */
+  position: absolute; /* Posición absoluta */
+  left: 50%; /* Centrar horizontalmente */
+  bottom: 0; /* Alinear en la parte inferior */
+  width: 100%; /* Ancho completo */
+  height: 5px; /* Altura del subrayado */
+  background-color: #ffd00e; /* Color del subrayado */
+  transform: translateX(-50%) scaleX(0); /* Iniciar en 0 */
+  transition: transform 0.4s ease; /* Transición suave */
+}
+
+/* Efecto al pasar el cursor */
+.section-title:hover:after {
+  transform: translateX(-50%) scaleX(1); /* Escalar al 100% */
+}
+
+/* Animación de desvanecimiento y transformación para el título */
+.section-title h1 {
+  opacity: 0; /* Comienza invisible */
+  transform: translateY(-20px); /* Desplazamiento hacia arriba */
+  animation: fadeInUp 0.6s forwards; /* Animación */
+}
+
+/* Animación de desvanecimiento */
+@keyframes fadeInUp {
+  to {
+    opacity: 1; /* Hacer visible */
+    transform: translateY(0); /* Volver a la posición original */
+  }
+}
+
+/* Sombra del texto */
+.section-title span {
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); /* Sombra del texto */
+}
+
+/* Estilos para la galería de imágenes */
+.image-gallery {
+  position: relative;
+  margin: auto auto;
+  max-width: 1200px;
+  border-radius: 15px;
+  overflow: hidden;
+  /*box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);*/
+  animation: fadeIn 0.6s ease; /* Animación de aparición */
+  padding: 10px; /* Espaciado interno */
+}
+
+/* Estilo para las imágenes dentro de la galería */
+.image-gallery img {
+  border-radius: 15px;
+  transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease; /* Suave */
+}
+
+/* Efecto de hover en las imágenes */
+.image-gallery img:hover {
+  transform: scale(1.1); /* Aumentar al 110% */
+  filter: brightness(1.1); /* Brillo adicional */
+  box-shadow: 0 8px 30px rgba(255, 208, 14, 0.8); /* Sombra en hover */
+}
+
+/* Estilos para los botones de navegación de la galería */
+.image-gallery .image-gallery-button {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px; /* Tamaño más grande */
+  height: 50px; /* Tamaño más grande */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.3s ease; /* Suave */
+}
+
+.image-gallery .image-gallery-button:hover {
+  background: rgba(255, 208, 14, 0.9); /* Color en hover */
+  transform: scale(1.1); /* Efecto de elevación al pasar el cursor */
+}
+
+/* Animación de desvanecimiento de la galería */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

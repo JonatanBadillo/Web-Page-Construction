@@ -3,14 +3,13 @@ import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import CustomCard from "./Components/Cards/Card";
 import Footer from "./Components/Footer/Footer";
-import Banner from './assets/vid1.mov'; 
-import Company1 from './assets/company.jpg';
-import Company2 from './assets/company2.jpg';
-import Company3 from './assets/company3.jpg';
+import Banner from "./assets/vid1.mov";
+import Company1 from "./assets/company.jpg";
+import Company2 from "./assets/company2.jpg";
+import Company3 from "./assets/company3.jpg";
 import WhoWeServe from "./Components/WhoWeServe";
 import Form from "./Components/Form/Form";
-import Comments from "./Components/Comments/Comments"; 
-
+import Comments from "./Components/Comments/Comments";
 
 import "./index.css";
 
@@ -35,25 +34,20 @@ const App = () => {
   ];
 
   return (
-    <div className="app-container"> {/* Añadimos la clase 'app-container' */}
+    <div className="app-container">
+      {" "}
+      {/* Añadimos la clase 'app-container' */}
       <Navbar />
-  
       <div className="banner-container">
         <div className="banner-overlay"></div>
-        <video
-          src={Banner}
-          autoPlay
-          loop
-          muted
-        />
+        <video src={Banner} autoPlay loop muted />
         <div className="banner-text">
           <h1>Building Dreams Together:</h1>
           <p>Creating our ideal space with top-notch construction.</p>
           <button className="banner-button">Request consultation</button>
         </div>
       </div>
-  
-  <br></br>
+      <br></br>
       <div className="card-container">
         <CustomCard
           imageSrc={Company1}
@@ -69,7 +63,7 @@ const App = () => {
           imageAlt="another description"
           title="Our History"
           // description="Discover the story behind our company's founding and growth."
-           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus. lore
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus. lore
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus."
           buttonText="Learn More"
         />
@@ -78,26 +72,27 @@ const App = () => {
           imageAlt="another description"
           title="Our Services"
           // description="Explore the wide range of services we offer to our clients."
-           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus. lore
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus. lore
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus."
           buttonText="Learn More"
         />
       </div>
-
       <br></br>
-  
       <WhoWeServe />
-      <center><h1>Our Work</h1></center>
-      <div>
-        <ImageGallery items={images} showBullets={true} />
+      <br></br>
+      <center>
+        <h1 className="section-title">
+          <span>Our Work</span>
+        </h1>
+      </center>
+      <div className="image-gallery">
+        <ImageGallery items={images} showBullets={true} showThumbnails={true} />
       </div>
-  
       <Form />
       <Comments />
       <Footer />
     </div>
   );
-  
 };
 
 export default App;
