@@ -11,14 +11,86 @@
 }
 
 .comments-section h2 {
-  text-align: left; /* Alinear a la izquierda */
-  margin-bottom: 30px; /* Espacio debajo del título */
-  font-size: 3.5rem; /* Tamaño más grande para el título */
+  font-size: 4rem; /* Tamaño grande para el título */
   color: #ffd00e; /* Color dorado */
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8); /* Sombra de texto más pronunciada */
-  animation: fadeIn 0.7s ease; /* Animación de entrada más suave */
+  text-align: left; /* Alinear a la izquierda */
+  margin: 40px 0; /* Espacio superior e inferior */
+  position: relative; /* Para posicionar el pseudo-elemento */
+  display: inline-block; /* Permite aplicar margen y alineación */
+  overflow: hidden; /* Ocultar el desbordamiento */
+  font-family: 'Montserrat', sans-serif; /* Fuente moderna */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 2px; /* Espaciado entre letras */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Sombra de texto para profundidad */
+  animation: popIn 0.5s forwards; /* Animación de entrada */
 }
 
+/* Línea a la izquierda del título */
+.comments-section h2:before {
+  content: ''; /* Pseudo-elemento */
+  position: absolute; /* Posición absoluta */
+  left: -20px; /* Ajuste a la izquierda */
+  top: 50%; /* Centrar verticalmente */
+  transform: translateY(-50%); /* Centrar verticalmente */
+  width: 5px; /* Ancho de la línea */
+  height: 100%; /* Altura completa */
+  background-color: #ffd00e; /* Color de la línea */
+  animation: lineDraw 0.5s forwards; /* Animación de entrada */
+}
+
+/* Animación de la línea */
+@keyframes lineDraw {
+  0% {
+    height: 0; /* Comienza desde 0 */
+  }
+  100% {
+    height: 100%; /* Altura completa */
+  }
+}
+
+/* Efecto de subrayado animado */
+.comments-section h2:after {
+  content: ''; /* Pseudo-elemento */
+  position: absolute; /* Posición absoluta */
+  left: 50%; /* Centrar horizontalmente */
+  bottom: -10px; /* Alinear un poco más abajo */
+  width: 100%; /* Ancho completo */
+  height: 5px; /* Altura del subrayado */
+  background-color: #ffd00e; /* Color del subrayado */
+  transform: translateX(-50%) scaleX(0); /* Iniciar en 0 */
+  transition: transform 0.4s ease; /* Transición suave */
+}
+
+/* Efecto al pasar el cursor */
+.comments-section h2:hover:after {
+  transform: translateX(-50%) scaleX(1); /* Escalar al 100% */
+}
+
+/* Animación de entrada del título */
+@keyframes popIn {
+  0% {
+    opacity: 0; /* Comienza invisible */
+    transform: scale(0.8); /* Inicia en tamaño reducido */
+  }
+  100% {
+    opacity: 1; /* Totalmente visible */
+    transform: scale(1); /* Tamaño normal */
+  }
+}
+
+/* Animación de desvanecimiento y transformación para el título */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0; /* Invisible al inicio */
+    transform: translateY(-20px); /* Mover hacia arriba */
+  }
+  100% {
+    opacity: 1; /* Totalmente visible */
+    transform: translateY(0); /* Sin desplazamiento */
+  }
+}
+
+/* Resto de estilos para la sección de comentarios */
 .comments-list {
   display: grid; /* Usar grid para mejor distribución */
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Crear columnas responsivas */
@@ -36,13 +108,15 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
   position: relative; /* Necesario para efectos de sombra */
   z-index: 2; /* Encima del pseudo-elemento */
-  height: 250px; /* Altura fija para las tarjetas */
+  height: 350px; /* Aumentar altura de las tarjetas */
   overflow: hidden; /* Ocultar el desbordamiento */
+  border: 2px solid transparent; /* Borde transparente inicial */
 }
 
 .comment-card:hover {
-  transform: translateY(-5px); /* Desplazamiento hacia arriba al pasar el mouse */
+  transform: translateY(-10px); /* Desplazamiento hacia arriba al pasar el mouse */
   box-shadow: 0 10px 30px rgba(255, 215, 0, 0.7); /* Sombra dorada más pronunciada */
+  border-color: #ffd00e; /* Borde dorado al pasar el mouse */
 }
 
 .stars {
@@ -97,6 +171,15 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%); /* Desplazarse desde la izquierda */
+  }
+  to {
+    transform: translateX(0); /* Posición final */
   }
 }
 

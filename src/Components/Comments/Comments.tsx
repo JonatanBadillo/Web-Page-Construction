@@ -1,4 +1,3 @@
-
 import './Comments.css';
 import { FaStar } from 'react-icons/fa';
 
@@ -10,14 +9,14 @@ interface Comment {
 
 const Comments = () => {
   const comments: Comment[] = [
-    { text: "Excelente servicio y atención al cliente.", name: "Ana Pérez", date: "2024-10-01 10:30" },
-    { text: "Muy satisfecho con mi compra, volveré sin duda.", name: "Carlos López", date: "2024-10-02 14:15" },
-    { text: "La calidad de los productos es excepcional.", name: "María Fernández", date: "2024-10-03 09:45" },
-    { text: "Un lugar muy agradable y profesional.", name: "Pedro Sánchez", date: "2024-10-04 16:00" },
-    { text: "Recomiendo este lugar a todos mis amigos.", name: "Luisa Morales", date: "2024-10-05 18:20" },
-    { text: "Siempre un placer comprar aquí, nunca decepcionan.", name: "Juan Rodríguez", date: "2024-10-06 12:00" },
-    { text: "Atención excepcional y productos de alta calidad.", name: "Isabel Torres", date: "2024-10-07 15:45" },
-    { text: "Me encanta la variedad de productos que ofrecen.", name: "Fernando Ruiz", date: "2024-10-08 17:30" },
+    { text: "El equipo de construcción fue muy profesional y cumplió con todos los plazos.", name: "Ana Pérez", date: "2024-10-01 10:30" },
+    { text: "Quedé muy satisfecho con la remodelación de mi casa. ¡Altamente recomendados!", name: "Carlos López", date: "2024-10-02 14:15" },
+    { text: "La calidad de los materiales utilizados es excepcional.", name: "María Fernández", date: "2024-10-03 09:45" },
+    { text: "Gran atención al cliente, se aseguraron de que estuviera satisfecho con el progreso.", name: "Pedro Sánchez", date: "2024-10-04 16:00" },
+    { text: "Recomiendo esta empresa a todos mis amigos que necesiten trabajos de construcción.", name: "Luisa Morales", date: "2024-10-05 18:20" },
+    { text: "Su compromiso con la calidad es evidente en cada proyecto.", name: "Juan Rodríguez", date: "2024-10-06 12:00" },
+    { text: "La remodelación de mi oficina fue un éxito total, ¡gracias por el excelente trabajo!", name: "Isabel Torres", date: "2024-10-07 15:45" },
+    { text: "Me encanta cómo transformaron mi jardín en un espacio hermoso y funcional.", name: "Fernando Ruiz", date: "2024-10-08 17:30" },
   ];
 
   return (
