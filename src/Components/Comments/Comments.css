@@ -11,12 +11,12 @@
 }
 
 .comments-section h2 {
-  text-align: center; /* Centrar el título */
+  text-align: left; /* Alinear a la izquierda */
   margin-bottom: 30px; /* Espacio debajo del título */
-  font-size: 3rem; /* Tamaño grande */
+  font-size: 3.5rem; /* Tamaño más grande para el título */
   color: #ffd00e; /* Color dorado */
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Sombra de texto */
-  animation: fadeIn 0.5s ease; /* Animación de entrada */
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8); /* Sombra de texto más pronunciada */
+  animation: fadeIn 0.7s ease; /* Animación de entrada más suave */
 }
 
 .comments-list {
@@ -31,16 +31,29 @@
 .comment-card {
   background: #1c1c1c; /* Fondo más claro que el fondo principal */
   border-radius: 10px; /* Bordes redondeados */
-  padding: 20px; /* Espaciado interno */
+  padding: 30px; /* Espaciado interno más amplio */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra de tarjeta */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
   position: relative; /* Necesario para efectos de sombra */
   z-index: 2; /* Encima del pseudo-elemento */
+  height: 250px; /* Altura fija para las tarjetas */
+  overflow: hidden; /* Ocultar el desbordamiento */
 }
 
 .comment-card:hover {
   transform: translateY(-5px); /* Desplazamiento hacia arriba al pasar el mouse */
   box-shadow: 0 10px 30px rgba(255, 215, 0, 0.7); /* Sombra dorada más pronunciada */
+}
+
+.stars {
+  display: flex; /* Disposición horizontal */
+  margin-bottom: 10px; /* Espacio debajo de las estrellas */
+}
+
+.star-icon {
+  color: #ffd00e; /* Color dorado para las estrellas */
+  margin-right: 5px; /* Espacio entre estrellas */
+  animation: bounce 0.5s infinite alternate; /* Animación de rebote */
 }
 
 .comment-name {
@@ -84,5 +97,14 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0); /* Posición inicial */
+  }
+  100% {
+    transform: translateY(-10px); /* Mover hacia arriba */
   }
 }
