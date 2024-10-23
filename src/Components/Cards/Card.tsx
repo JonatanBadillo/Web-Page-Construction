@@ -3,12 +3,13 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import { ReactNode } from 'react';
 
 interface CardProps {
   imageSrc: string;
   imageAlt: string;
   title: string;
-  description: string;
+  description: ReactNode;  // Cambiado de string a ReactNode
   buttonText: string;
 }
 
@@ -19,13 +20,13 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
         maxWidth: '60vh', 
         backgroundColor: 'rgba(30, 30, 30, 0.9)', 
         borderRadius: '8px', 
-        transition: 'transform 0.3s, box-shadow 0.3s, background-color 0.3s', // Transiciones
-        border: '1px solid transparent', // Borde inicial transparente
+        transition: 'transform 0.3s, box-shadow 0.3s, background-color 0.3s', 
+        border: '1px solid transparent', 
         '&:hover': { 
           transform: 'scale(1.05)', 
           boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.5)', 
-          backgroundColor: 'rgba(50, 50, 50, 1)', // Cambia el color de fondo al pasar el cursor
-          border: '1px solid rgba(255, 215, 0, 0.8)', // Agrega un borde dorado al pasar el cursor
+          backgroundColor: 'rgba(50, 50, 50, 1)', 
+          border: '1px solid rgba(255, 215, 0, 0.8)', 
         } 
       }}
     >
@@ -36,9 +37,9 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
           image={imageSrc}
           alt={imageAlt}
           sx={{ 
-            transition: 'opacity 0.3s', // Transición de opacidad
+            transition: 'opacity 0.3s', 
             '&:hover': { 
-              opacity: 0.8 // Cambia la opacidad de la imagen al pasar el cursor
+              opacity: 0.8 
             } 
           }}
         />
@@ -48,7 +49,7 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
             {title}
           </Typography>
           <Typography variant="body2" color="grey">
-            {description}
+            {description}  {/* Ahora puede ser JSX */}
           </Typography>
         </CardContent>
       </CardActionArea>

@@ -49,49 +49,60 @@ const App = () => {
       </div>
       <br></br>
       <div className="card-container">
-        <CustomCard
-          imageSrc={Company1}
-          imageAlt="green iguana"
-          title="Our Team"
-          // description="Meet the talented individuals who make up our company."
-          description="Our team consists of experienced and skilled professionals. 
+      <CustomCard
+  imageSrc={Company1}
+  imageAlt="green iguana"
+  title="Our Team"
+  description={
+    <ul>
+      <li>Head of Operations</li>
+      <li>Construction Managers</li>
+      <li>Project Managers</li>
+      <li>Project Coordinators</li>
+      <li>Foremen</li>
+      <li>Estimators</li>
+      <li>We work together to ensure the success of each project we undertake.</li>
+      <li>We bring dreams to life through expert construction solutions.</li>
+    </ul>
+  }
+  buttonText="LinkedIn"
+/>
 
-Head of Operations
+<CustomCard
+  imageSrc={Company2}
+  imageAlt="another description"
+  title="Our History"
+  description={
+    <ul>
+      <li>We have been in the construction business for over 24 years.</li>
+      <li>We provide high-quality services to our clients.</li>
+      <li>Our team has completed numerous projects, from small to large-scale constructions.</li>
+      <li>We have built a solid reputation for delivering high-quality construction projects.</li>
+    </ul>
+  }
+  buttonText="Learn More"
+/>
 
-Contruction Managers
+<CustomCard
+  imageSrc={Company3}
+  imageAlt="another description"
+  title="Our Services"
+  description={
+    <ul>
+      <li>Metal Framing</li>
+      <li>Drywall & Taping</li>
+      <li>Painting</li>
+      <li>Wallpaper</li>
+      <li>Acoustical Ceilings</li>
+      <li>Insulation</li>
+      <li>Blow-In Insulation</li>
+      <li>Foam Insulation</li>
+      <li>From Retail, Commercial, and Residential, we deliver exceptional results on every project.</li>
+    </ul>
+  }
+  buttonText="Learn More"
+/>
 
-Project Managers
-
-Project Coordinators
-
-Foremen
-
-Estimators
-
-We work together to ensure the success of each project we undertake.
-
-We bring dreams to life through expert construction solutions"
-          buttonText="LinkedIn"
-        />
-        <CustomCard
-          imageSrc={Company2}
-          imageAlt="another description"
-          title="Our History"
-          // description="Discover the story behind our company's founding and growth."
-          description="We have been in the construction business for over 24 years, providing high-quality services to our clients. Our team has completed numerous projects, ranging from small  to large-scale constructions.
-
-With years of experience in the industry, we have built a solid reputation for delivering high-quality construction projects."
-          buttonText="Learn More"
-        />
-        <CustomCard
-          imageSrc={Company3}
-          imageAlt="another description"
-          title="Our Services"
-          // description="Explore the wide range of services we offer to our clients."
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus. lore
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus."
-          buttonText="Learn More"
-        />
       </div>
       <br></br>
       <WhoWeServe />
