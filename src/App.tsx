@@ -54,8 +54,23 @@ const App = () => {
           imageAlt="green iguana"
           title="Our Team"
           // description="Meet the talented individuals who make up our company."
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus. lore
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus."
+          description="Our team consists of experienced and skilled professionals. 
+
+Head of Operations
+
+Contruction Managers
+
+Project Managers
+
+Project Coordinators
+
+Foremen
+
+Estimators
+
+We work together to ensure the success of each project we undertake.
+
+We bring dreams to life through expert construction solutions"
           buttonText="LinkedIn"
         />
         <CustomCard
@@ -63,8 +78,9 @@ const App = () => {
           imageAlt="another description"
           title="Our History"
           // description="Discover the story behind our company's founding and growth."
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus. lore
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus."
+          description="We have been in the construction business for over 24 years, providing high-quality services to our clients. Our team has completed numerous projects, ranging from small  to large-scale constructions.
+
+With years of experience in the industry, we have built a solid reputation for delivering high-quality construction projects."
           buttonText="Learn More"
         />
         <CustomCard
