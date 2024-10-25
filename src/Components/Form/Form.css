@@ -216,4 +216,32 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra original al hacer clic */
   }
   
+  .form-col-full {
+    flex: 1; /* Se expande para ocupar todo el espacio disponible */
+    width: 100%; /* Asegurarse de que ocupe todo el ancho */
+    margin: 10px; /* Espaciado para que no toque los bordes */
+}
+
+.form-container textarea {
+    width: 100%; /* Mantener el ancho completo */
+    padding: 12px; /* Espaciado interno */
+    border: 1px solid #ced4da;
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 16px;
+    color: #fff; /* Texto blanco */
+    background-color: rgba(50, 50, 50, 0.8); /* Fondo oscuro */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transición para enfoque */
+    max-width: 100%; /* Asegurarse de que ocupe el 100% del contenedor */
+    margin: 0 auto; /* Centrar el elemento */
+    resize: vertical; /* Permitir que el usuario cambie el tamaño verticalmente */
+    min-height: 150px; /* Aumentar la altura mínima */
+}
+
+
+  
+  .form-container textarea:focus {
+    border-color: #ffd00e; /* Bordes dorados en enfoque */
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25); /* Sombra dorada */
+  }
   
