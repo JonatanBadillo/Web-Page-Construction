@@ -10,7 +10,7 @@ import Company2 from "./assets/company2.jpg";
 import Company3 from "./assets/company3.jpg";
 import WhoWeServe from "./Components/WhoWeServe";
 import Form from "./Components/Form/Form";
-import Comments from "./Components/Comments/Comments";
+// import Comments from "./Components/Comments/Comments";
 
 import "./index.css";
 
@@ -116,7 +116,7 @@ const App = () => {
       <DynamicImageGallery images={imagesToDisplay} />
 
       <Form />
-      <Comments />
+      {/* <Comments /> */}
       <Footer />
     </div>
   );
