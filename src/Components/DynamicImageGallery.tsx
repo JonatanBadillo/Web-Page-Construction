@@ -8,14 +8,22 @@ interface DynamicImageGalleryProps {
 }
 
 const DynamicImageGallery: React.FC<DynamicImageGalleryProps> = ({ images }) => {
+  const items = images.map(image => ({
+    ...image,
+    originalClass: 'custom-image', // Aplicar clase personalizada a las imágenes
+    description: image.description ? (
+      <div className="custom-caption">{image.description}</div>
+    ) : null,
+  }));
+
   return (
     <div className="dynamic-image-gallery">
-      <ImageGallery 
-        items={images} 
-        showBullets={true} 
-        showThumbnails={true} 
-        showFullscreenButton={false} 
-        showPlayButton={false} 
+      <ImageGallery
+        items={items}
+        showBullets={true}
+        showThumbnails={true}
+        showFullscreenButton={false}
+        showPlayButton={false}
         additionalClass="custom-gallery"
       />
     </div>

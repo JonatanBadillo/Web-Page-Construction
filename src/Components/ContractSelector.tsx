@@ -9,7 +9,7 @@ interface ContractSelectorProps {
 const ContractSelector: React.FC<ContractSelectorProps> = ({ selectedContract, setSelectedContract }) => {
   return (
     <div className="contract-selector">
-      <h2 className="selector-title">Selecciona tu tipo de contratista</h2>
+      <h2 className="selector-title">Select your type of contractor</h2>
       <div className="button-container">
         <button
           className={`contract-button ${selectedContract === 'General' ? 'active' : ''}`}
@@ -28,14 +28,11 @@ const ContractSelector: React.FC<ContractSelectorProps> = ({ selectedContract, s
       <div className="contract-description">
         {selectedContract === 'General' ? (
           <p>
-            Un contratista general es responsable de supervisar todo el proyecto de construcción,
-            coordinando con subcontratistas y asegurando que el trabajo se complete según las
-            especificaciones y los plazos.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quibusdam obcaecati reiciendis mollitia numquam non, sapiente accusamus, itaque minima iure, corporis nihil nesciunt! Quas modi sit quod suscipit, laborum reprehenderit?
           </p>
         ) : (
           <p>
-            Un subcontratista es un profesional especializado contratado para realizar tareas
-            específicas dentro de un proyecto de construcción más grande, como electricidad, plomería o carpintería.
+            2Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ratione quasi dignissimos illum animi, cumque pariatur veniam repellat porro officiis dolor quibusdam ullam, vero tempora consequuntur facere quidem iure hic.
           </p>
         )}
       </div>
