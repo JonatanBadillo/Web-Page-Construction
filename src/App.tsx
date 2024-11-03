@@ -107,7 +107,7 @@ const App = () => {
 
       <center>
         <h1 className="section-title">
-          <span>Our Work</span>
+          <span>Our Projects</span>
         </h1>
       </center>
 

@@ -243,7 +243,7 @@
 }
 
 .selector-title {
-  font-size: 2.5rem;
+  font-size: 3rem; /* Aumentar el tamaño del título */
   font-weight: bold;
   margin-bottom: 20px;
   color: #ffd00e;
@@ -252,18 +252,19 @@
 
 .button-container {
   display: flex;
-  gap: 10px;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
 .contract-button {
   background-color: transparent;
   color: #ffd00e;
-  padding: 10px 20px;
-  margin: 0 5px;
-  border: 2px solid #ffd00e;
-  border-radius: 25px;
+  padding: 15px 30px; /* Aumentar padding para que sean más grandes */
+  border: 3px solid #ffd00e; /* Borde más grueso */
+  border-radius: 30px;
   cursor: pointer;
   font-weight: bold;
+  font-size: 1.2rem; /* Aumentar tamaño de fuente */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -275,14 +276,52 @@
 
 .contract-description {
   margin-top: 20px;
-
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 700px;
+  padding: 30px; /* Aumentar el padding para un aspecto más grande */
+  border-radius: 15px;
+  max-width: 800px;
   color: #fff;
   text-align: center;
   border: 2px solid #ffd00e;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-  font-size: 1.2rem;
+  font-size: 1.4rem; /* Aumentar el tamaño de la fuente */
   line-height: 1.6;
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .selector-title {
+    font-size: 2.5rem; /* Reducir tamaño del título en pantallas pequeñas */
+  }
+
+  .contract-button {
+    padding: 10px 20px; /* Reducir padding para dispositivos móviles */
+    font-size: 1rem; /* Tamaño de fuente más pequeño en móviles */
+  }
+
+  .contract-description {
+    font-size: 1.1rem; /* Reducir tamaño de fuente para dispositivos móviles */
+    padding: 20px; /* Reducir padding en la descripción */
+    max-width: 90%; /* Ajustar el ancho de la caja de descripción */
+  }
+
+  .button-container {
+    flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+    gap: 10px; /* Espacio entre botones */
+  }
+}
+
+@media (max-width: 480px) {
+  .selector-title {
+    font-size: 2rem; /* Reducir aún más el tamaño en pantallas muy pequeñas */
+  }
+
+  .contract-button {
+    padding: 8px 15px; /* Ajuste de padding para pantallas muy pequeñas */
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+  }
+
+  .contract-description {
+    font-size: 1rem; /* Reducir tamaño de fuente */
+    padding: 15px; /* Ajustar padding */
+  }
 }
