@@ -31,7 +31,7 @@ const Footer = () => {
       </div>
       <div className="footer-contact">
         <h3 className="footer-subtitle">Contact Us</h3>
-        <p>Email: admin@samalexanderconstruction.com.</p>
+        <p>Email: admin@samalexanderconstruction.com</p>
         <p>Phone: (408) 668-3162</p>
       </div>
       <div className="footer-social">
