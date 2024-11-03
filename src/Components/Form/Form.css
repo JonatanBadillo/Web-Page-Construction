@@ -96,7 +96,7 @@
   
   .form-container {
     
-    padding: 40px; /* Espaciado interno */
+    padding: 5px 50px; /* Espaciado interno */
     border-radius: 10px; /* Bordes redondeados */
     
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
