@@ -45,10 +45,10 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
         />
         <br />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div" color="white">
+          <Typography gutterBottom variant="h5" component="div" color="rgba(255, 215, 0, 0.8)">
             {title}
           </Typography>
-          <Typography variant="body2" color="grey">
+          <Typography variant="body2" color="white">
             {description}  {/* Ahora puede ser JSX */}
           </Typography>
         </CardContent>
