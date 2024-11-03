@@ -9,29 +9,33 @@ interface ContractSelectorProps {
 const ContractSelector: React.FC<ContractSelectorProps> = ({ selectedContract, setSelectedContract }) => {
   return (
     <div className="contract-selector">
-      <button
-        className={`contract-button ${selectedContract === 'General' ? 'active' : ''}`}
-        onClick={() => setSelectedContract('General')}
-      >
-        General Contractor
-      </button>
-      <button
-        className={`contract-button ${selectedContract === 'Sub' ? 'active' : ''}`}
-        onClick={() => setSelectedContract('Sub')}
-      >
-        Sub Contractor
-      </button>
+      <h2 className="selector-title">Selecciona tu tipo de contratista</h2>
+      <div className="button-container">
+        <button
+          className={`contract-button ${selectedContract === 'General' ? 'active' : ''}`}
+          onClick={() => setSelectedContract('General')}
+        >
+          General Contractor
+        </button>
+        <button
+          className={`contract-button ${selectedContract === 'Sub' ? 'active' : ''}`}
+          onClick={() => setSelectedContract('Sub')}
+        >
+          Sub Contractor
+        </button>
+      </div>
 
       <div className="contract-description">
         {selectedContract === 'General' ? (
           <p>
-            General contractors oversee the entirety of construction projects, coordinating teams, managing resources, and
-            ensuring that projects are completed on time and within budget.
+            Un contratista general es responsable de supervisar todo el proyecto de construcción,
+            coordinando con subcontratistas y asegurando que el trabajo se complete según las
+            especificaciones y los plazos.
           </p>
         ) : (
           <p>
-            Sub contractors are specialized experts hired by general contractors to handle specific aspects of a project,
-            such as electrical, plumbing, or carpentry work.
+            Un subcontratista es un profesional especializado contratado para realizar tareas
+            específicas dentro de un proyecto de construcción más grande, como electricidad, plomería o carpintería.
           </p>
         )}
       </div>

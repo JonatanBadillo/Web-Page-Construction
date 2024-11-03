@@ -234,3 +234,55 @@
 
 
 /* ///////////////////////////////////CARRUSEL DE IMAGENES//////////////////////////*/
+.contract-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
+  color: #ffd00e;
+}
+
+.selector-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffd00e;
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+}
+
+.contract-button {
+  background-color: transparent;
+  color: #ffd00e;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border: 2px solid #ffd00e;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contract-button.active,
+.contract-button:hover {
+  background-color: #ffd00e;
+  color: #000;
+}
+
+.contract-description {
+  margin-top: 20px;
+
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 700px;
+  color: #fff;
+  text-align: center;
+  border: 2px solid #ffd00e;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
