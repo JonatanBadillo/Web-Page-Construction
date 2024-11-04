@@ -14,13 +14,14 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { keyframes } from '@mui/system';
+import logo from '../../assets/logo.png';
 
 interface Props {
   window?: () => Window;
 }
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About Us', 'Our Work', 'Contact Us','Opinions'];
+const navItems = ['Home', 'About Us', 'Our Work', 'Contact Us', 'Opinions'];
 
 // Definimos un keyframe para la animación de elevación
 const elevateAnimation = keyframes`
@@ -90,6 +91,19 @@ export default function DrawerAppBar(props: Props) {
           >
             <MenuIcon />
           </IconButton>
+
+          {/* Logo de la empresa */}
+          <Box component="img" 
+            src={logo}
+            alt="Company Logo" 
+            sx={{ 
+              height: 90, 
+              width: 90, 
+              mr: 2, 
+              display: { xs: 'none', sm: 'block' } , padding: 1 ,
+            }} 
+          />
+
           <Typography
             variant="h6"
             component="div"
@@ -107,6 +121,7 @@ export default function DrawerAppBar(props: Props) {
           >
             Sam Alexander Construction Inc.
           </Typography>
+
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
               <Button 
