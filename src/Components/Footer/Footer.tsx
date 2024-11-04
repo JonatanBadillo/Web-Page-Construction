@@ -4,7 +4,14 @@ import Sponsor2 from "../../assets/sponsor2.png";
 import Sponsor3 from "../../assets/sponsor3.png";
 import Sponsor4 from "../../assets/sponsor4.png";
 
-const Footer = () => {
+interface FooterProps {
+  onHomeClick: () => void;
+  onAboutClick: () => void;
+  onServicesClick: () => void;
+  onContactClick: () => void;
+}
+
+const Footer = ({ onHomeClick, onAboutClick, onServicesClick, onContactClick }: FooterProps) => {
   const sponsors = [
     { src: Sponsor1, alt: 'Enterprise 1' },
     { src: Sponsor2, alt: 'Enterprise 2' },
@@ -23,10 +30,10 @@ const Footer = () => {
       <div className="footer-links">
         <h3 className="footer-subtitle">Quick Links</h3>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a onClick={onHomeClick} >Home</a></li>
+          <li><a onClick={onAboutClick} >About Us</a></li>
+          <li><a onClick={onServicesClick}>Services</a></li>
+          <li><a onClick={onContactClick}>Contact</a></li>
         </ul>
       </div>
       <div className="footer-contact">
