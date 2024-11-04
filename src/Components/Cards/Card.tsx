@@ -9,7 +9,7 @@ interface CardProps {
   imageSrc: string;
   imageAlt: string;
   title: string;
-  description: ReactNode;  // Cambiado de string a ReactNode
+  description: ReactNode;
   buttonText: string;
 }
 
@@ -19,7 +19,8 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
       sx={{ 
         maxWidth: '60vh', 
         backgroundColor: 'rgba(30, 30, 30, 0.9)', 
-        borderRadius: '8px', 
+        borderRadius: '10px', 
+        overflow: 'hidden',
         transition: 'transform 0.3s, box-shadow 0.3s, background-color 0.3s', 
         border: '1px solid transparent', 
         '&:hover': { 
@@ -43,14 +44,37 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
             } 
           }}
         />
-        <br />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div" color="rgba(255, 215, 0, 0.8)">
+        <CardContent sx={{ padding: '20px', textAlign: 'center' }}>
+          <Typography 
+            gutterBottom 
+            variant="h5" 
+            component="div" 
+            color="rgba(255, 215, 0, 0.8)"
+            sx={{
+              fontSize: '1.8rem', // Tamaño del título
+              fontWeight: 'bold',
+              textTransform: 'uppercase',
+              textShadow: '2px 2px 6px rgba(0, 0, 0, 0.6)', // Sombra del texto
+              letterSpacing: '1.5px', // Espaciado entre letras
+              marginBottom: '10px',
+            }}
+          >
             {title}
           </Typography>
-          <Typography variant="body2" color="white">
-            {description}  {/* Ahora puede ser JSX */}
-          </Typography>
+          <div 
+            style={{ 
+              color: 'white', 
+              fontSize: '1rem', // Tamaño de la descripción
+              lineHeight: 1.6, // Espaciado entre líneas
+              padding: '10px 0', 
+              borderTop: '1px solid rgba(255, 215, 0, 0.3)', // Línea de separación
+              borderBottom: '1px solid rgba(255, 215, 0, 0.3)', 
+              textAlign: 'left', 
+              textShadow: '1px 1px 4px rgba(0, 0, 0, 0.5)', // Sombra de la descripción
+            }}
+          >
+            {description}  
+          </div>
         </CardContent>
       </CardActionArea>
     </Card>
