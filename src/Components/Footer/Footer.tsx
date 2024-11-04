@@ -30,10 +30,10 @@ const Footer = ({ onHomeClick, onAboutClick, onServicesClick, onContactClick }: 
       <div className="footer-links">
         <h3 className="footer-subtitle">Quick Links</h3>
         <ul>
-          <li><a onClick={onHomeClick} >Home</a></li>
-          <li><a onClick={onAboutClick} >About Us</a></li>
-          <li><a onClick={onServicesClick}>Services</a></li>
-          <li><a onClick={onContactClick}>Contact</a></li>
+          <li><button onClick={onHomeClick} className="footer-link">Home</button></li>
+          <li><button onClick={onAboutClick} className="footer-link">About Us</button></li>
+          <li><button onClick={onServicesClick} className="footer-link">Services</button></li>
+          <li><button onClick={onContactClick} className="footer-link">Contact</button></li>
         </ul>
       </div>
       <div className="footer-contact">
@@ -44,10 +44,10 @@ const Footer = ({ onHomeClick, onAboutClick, onServicesClick, onContactClick }: 
       <div className="footer-social">
         <h3 className="footer-subtitle">Follow Us</h3>
         <div className="social-icons">
-          <a href="#" className="social-icon">FB</a>
-          <a href="#" className="social-icon">TW</a>
-          <a href="#" className="social-icon">IG</a>
-          <a href="#" className="social-icon">LN</a>
+          <span className="social-icon">FB</span>
+          <span className="social-icon">TW</span>
+          <span className="social-icon">IG</span>
+          <span className="social-icon">LN</span>
         </div>
       </div>
       <div className="footer-bottom">
