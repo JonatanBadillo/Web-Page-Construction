@@ -13,35 +13,28 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { keyframes } from '@mui/system';
+
 import logo from '../../assets/logo.png';
 
-interface Props {
+interface NavbarProps {
+  onHomeClick: () => void;
+  onAboutClick: () => void;
+  onOurWorkClick: () => void;
+  onContactClick: () => void;
   window?: () => Window;
 }
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About Us', 'Our Work', 'Contact Us', 'Opinions'];
 
-// Definimos un keyframe para la animación de elevación
-const elevateAnimation = keyframes`
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-`;
-
-export default function DrawerAppBar(props: Props) {
-  const { window } = props;
+const Navbar = ({ onHomeClick, onAboutClick, onOurWorkClick, onContactClick, window }: NavbarProps) => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
+  };
+
+  const handleTitleClick = () => {
+    onHomeClick(); // Llamada a onHomeClick para desplazarse al inicio
   };
 
   const drawer = (
@@ -51,22 +44,26 @@ export default function DrawerAppBar(props: Props) {
       </Typography>
       <Divider sx={{ backgroundColor: '#ffd00e' }} />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton 
-              sx={{ 
-                textAlign: 'center', 
-                transition: 'background-color 0.3s, transform 0.3s', 
-                '&:hover': {
-                  backgroundColor: 'rgba(255, 208, 14, 0.2)', // Color de fondo en hover
-                  animation: `${elevateAnimation} 0.5s ease` // Animación al hacer hover
-                }
-              }}
-            >
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <ListItem disablePadding>
+          <ListItemButton onClick={onHomeClick} sx={{ textAlign: 'center' }}>
+            <ListItemText primary="Home" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton onClick={onAboutClick} sx={{ textAlign: 'center' }}>
+            <ListItemText primary="About Us" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton onClick={onOurWorkClick} sx={{ textAlign: 'center' }}>
+            <ListItemText primary="Our Projects" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton onClick={onContactClick} sx={{ textAlign: 'center' }}>
+            <ListItemText primary="Contact Us" />
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
@@ -93,52 +90,41 @@ export default function DrawerAppBar(props: Props) {
           </IconButton>
 
           {/* Logo de la empresa */}
-          <Box component="img" 
+          <Box 
+            component="img"
             src={logo}
-            alt="Company Logo" 
-            sx={{ 
-              height: 90, 
-              width: 90, 
-              mr: 2, 
-              display: { xs: 'none', sm: 'block' } , padding: 1 ,
-            }} 
+            alt="Company Logo"
+            sx={{
+              height: 90,
+              width: 90,
+              mr: 2,
+              display: { xs: 'none', sm: 'block' },
+              padding: 1,
+            }}
           />
 
           <Typography
             variant="h6"
             component="div"
-            sx={{ 
-              flexGrow: 1, 
-              display: { xs: 'none', sm: 'block' }, 
-              color: '#ffd00e', 
-              fontWeight: 'bold', 
+            onClick={handleTitleClick} // Desplazarse al tope al hacer clic
+            sx={{
+              flexGrow: 1,
+              display: { xs: 'none', sm: 'block' },
+              color: '#ffd00e',
+              fontWeight: 'bold',
               letterSpacing: 2,
-              transition: 'transform 0.3s',
-              '&:hover': {
-                transform: 'scale(1.05)', // Efecto de zoom al pasar el mouse
-              }
+              cursor: 'pointer', // Añadir cursor pointer
             }}
           >
             Sam Alexander Construction Inc.
           </Typography>
 
+          {/* Botones de Navegación */}
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button 
-                key={item} 
-                sx={{ 
-                  color: '#ffd00e', 
-                  transition: 'color 0.3s, transform 0.3s',
-                  '&:hover': {
-                    color: '#fff', // Cambiar color al pasar el mouse
-                    transform: 'scale(1.1)', // Efecto de zoom
-                    transition: 'transform 0.3s', // Transición suave
-                  } 
-                }}
-              >
-                {item}
-              </Button>
-            ))}
+            <Button onClick={onHomeClick} sx={{ color: '#ffd00e' }}>Home</Button>
+            <Button onClick={onAboutClick} sx={{ color: '#ffd00e' }}>About Us</Button>
+            <Button onClick={onOurWorkClick} sx={{ color: '#ffd00e' }}>Our Projects</Button>
+            <Button onClick={onContactClick} sx={{ color: '#ffd00e' }}>Contact Us</Button>
           </Box>
         </Toolbar>
       </AppBar>
@@ -153,13 +139,13 @@ export default function DrawerAppBar(props: Props) {
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { 
-              boxSizing: 'border-box', 
+            '& .MuiDrawer-paper': {
+              boxSizing: 'border-box',
               width: drawerWidth,
-              backgroundColor: '#000', 
+              backgroundColor: '#000',
               background: 'radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%)',
               color: '#ffd00e',
-              transition: 'transform 0.3s ease', // Transición suave para el Drawer
+              transition: 'transform 0.3s ease',
             },
           }}
         >
@@ -169,3 +155,5 @@ export default function DrawerAppBar(props: Props) {
     </Box>
   );
 }
+
+export default Navbar;

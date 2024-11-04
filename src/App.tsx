@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState, useRef } from 'react';
 import Navbar from "./Components/Navbar/Navbar";
 import CustomCard from "./Components/Cards/Card";
 import Footer from "./Components/Footer/Footer";
@@ -10,12 +10,21 @@ import Company2 from "./assets/company2.jpg";
 import Company3 from "./assets/company3.jpg";
 import WhoWeServe from "./Components/WhoWeServe";
 import Form from "./Components/Form/Form";
-// import Comments from "./Components/Comments/Comments";
-
 import "./index.css";
 
 const App = () => {
   const [selectedContract, setSelectedContract] = useState("General");
+
+  // Crear refs para cada sección
+  const bannerRef = useRef(null);
+  const aboutUsRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
+
+  // Función para desplazarse a una sección específica
+  const scrollToSection = (ref) => {
+    ref.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const generalContractImages = [
     { original: "https://picsum.photos/id/1018/1000/600/", thumbnail: "https://picsum.photos/id/1018/250/150/", description: "Overseeing the entire project" },
@@ -33,19 +42,33 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <Navbar />
-      <div className="banner-container">
+      {/* Navbar with scroll handlers */}
+      <Navbar 
+        onHomeClick={() => scrollToSection(bannerRef)}
+        onAboutClick={() => scrollToSection(aboutUsRef)}
+        onOurWorkClick={() => scrollToSection(projectsRef)}
+        onContactClick={() => scrollToSection(contactRef)}
+      />
+
+      {/* Banner Section */}
+      <div ref={bannerRef} className="banner-container">
         <div className="banner-overlay"></div>
         <video src={Banner} autoPlay loop muted />
         <div className="banner-text">
           <h1>Building Dreams Together:</h1>
           <p>Creating our ideal space with top-notch construction.</p>
-          <button className="banner-button">Request consultation</button>
+          <button 
+            className="banner-button" 
+            onClick={() => scrollToSection(contactRef)}
+          >
+            Request consultation
+          </button>
         </div>
       </div>
       <br />
 
-      <div className="card-container">
+      {/* About Us Section (Cards) */}
+      <div ref={aboutUsRef} className="card-container">
         <CustomCard
           imageSrc={Company1}
           imageAlt="Our Team"
@@ -102,21 +125,29 @@ const App = () => {
       </div>
       <br />
       
+      {/* Who We Serve Section */}
       <WhoWeServe />
       <br />
 
+      {/* Projects Section */}
       <center>
         <h1 className="section-title">
           <span>Our Projects</span>
         </h1>
       </center>
 
-      {/* Sección de selección de contrato y carrusel de imágenes */}
-      <ContractSelector selectedContract={selectedContract} setSelectedContract={setSelectedContract} />
-      <DynamicImageGallery images={imagesToDisplay} />
+      {/* Contract Selector and Gallery */}
+      <div ref={projectsRef}>
+        <ContractSelector selectedContract={selectedContract} setSelectedContract={setSelectedContract} />
+        <DynamicImageGallery images={imagesToDisplay} />
+      </div>
 
-      <Form />
-      {/* <Comments /> */}
+      {/* Contact Form */}
+      <div ref={contactRef}>
+        <Form />
+      </div>
+
+      {/* Footer */}
       <Footer />
     </div>
   );
