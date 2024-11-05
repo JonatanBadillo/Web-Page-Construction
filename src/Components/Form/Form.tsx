@@ -5,34 +5,55 @@ import { useRef, useState } from 'react';
 const Form = () => {
   const form = useRef<HTMLFormElement>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+
+  const sanitizeInput = (value: string) => {
+    // Remueve caracteres especiales
+    return value.replace(/[<>\/]/g, "").trim();
+  };
 
   const validateForm = () => {
     const formData = new FormData(form.current!);
-    const name = formData.get("name")?.toString().trim();
-    const lastName = formData.get("lastName")?.toString().trim();
-    const email = formData.get("email")?.toString().trim();
-    const phone = formData.get("phone")?.toString().trim();
-    const subject = formData.get("subject")?.toString().trim();
-    const reason = formData.get("reason")?.toString().trim();
+    const name = sanitizeInput(formData.get("name")?.toString() || "");
+    const lastName = sanitizeInput(formData.get("lastName")?.toString() || "");
+    const email = sanitizeInput(formData.get("email")?.toString() || "");
+    const phone = sanitizeInput(formData.get("phone")?.toString() || "");
+    const subject = sanitizeInput(formData.get("subject")?.toString() || "");
+    const reason = sanitizeInput(formData.get("reason")?.toString() || "");
 
-    if (!name || !lastName || !email || !phone || !subject || !reason) {
-      alert("Please fill in all fields.");
-      return false;
-    }
-    
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex = /^[0-9+\s]+$/;
+    let formErrors: { [key: string]: string } = {};
 
-    if (!emailRegex.test(email)) {
-      alert("Please enter a valid email address.");
-      return false;
+    if (!name || name.length < 2) {
+      formErrors.name = "Please enter a valid name (at least 2 characters).";
     }
-    if (!phoneRegex.test(phone)) {
-      alert("Please enter a valid phone number.");
-      return false;
+    if (!lastName || lastName.length < 2) {
+      formErrors.lastName = "Please enter a valid last name (at least 2 characters).";
+    }
+    if (!email) {
+      formErrors.email = "Email is required.";
+    } else {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        formErrors.email = "Please enter a valid email address.";
+      }
+    }
+    if (!phone) {
+      formErrors.phone = "Phone number is required.";
+    } else {
+      const phoneRegex = /^[0-9+\s]+$/;
+      if (!phoneRegex.test(phone)) {
+        formErrors.phone = "Please enter a valid phone number.";
+      }
+    }
+    if (!subject || subject.length < 5) {
+      formErrors.subject = "Subject must be at least 5 characters.";
+    }
+    if (!reason || reason.length < 10) {
+      formErrors.reason = "Please provide a reason with at least 10 characters.";
     }
 
-    return true;
+    setErrors(formErrors);
+    return Object.keys(formErrors).length === 0;
   };
 
   const sendEmail = (e: React.FormEvent) => {
@@ -50,6 +71,7 @@ const Form = () => {
       console.log(result.text);
       setIsSubmitted(true); // Mostrar mensaje de éxito
       form.current?.reset(); // Limpiar formulario
+      setErrors({});
     }, (error) => {
       console.log(error.text);
       alert('Failed to send message.');
@@ -71,32 +93,38 @@ const Form = () => {
               <div className="form-col">
                 <label>Name:</label>
                 <input type="text" name="name" required />
+                {errors.name && <small className="error-message">{errors.name}</small>}
               </div>
               <div className="form-col">
                 <label>Last Name:</label>
                 <input type="text" name="lastName" required />
+                {errors.lastName && <small className="error-message">{errors.lastName}</small>}
               </div>
             </div>
             <div className="form-row">
               <div className="form-col">
                 <label>Email:</label>
                 <input type="email" name="email" required />
+                {errors.email && <small className="error-message">{errors.email}</small>}
               </div>
               <div className="form-col">
                 <label>Phone number:</label>
                 <input type="tel" name="phone" required />
+                {errors.phone && <small className="error-message">{errors.phone}</small>}
               </div>
             </div>
             <div className="form-row">
               <div className="form-col-full">
                 <label>Subject:</label>
                 <input type="text" name="subject" placeholder="Enter the subject" required />
+                {errors.subject && <small className="error-message">{errors.subject}</small>}
               </div>
             </div>
             <div className="form-row">
               <div className="form-col-full">
                 <label>Reason for contact:</label>
                 <textarea name="reason" rows={4} placeholder="Please specify your reason for contacting us" required></textarea>
+                {errors.reason && <small className="error-message">{errors.reason}</small>}
               </div>
             </div>
             <button type="submit">Submit</button>
