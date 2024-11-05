@@ -96,7 +96,7 @@
   
   .form-container {
     
-    padding: 5px 50px; /* Espaciado interno */
+    /* padding: 5px 50px; Espaciado interno */
     border-radius: 10px; /* Bordes redondeados */
     
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
@@ -138,7 +138,7 @@
     color: #fff; /* Texto blanco */
     background-color: rgba(50, 50, 50, 0.8); /* Fondo oscuro para entradas */
     transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transición para enfoque */
-    max-width: 600px; /* Ancho máximo para hacerlo más ancho */
+    /* max-width: 600px;  */
     margin: 0 auto; /* Centrar el elemento */
   }
   
