@@ -36,5 +36,3 @@ dist/
 # Ignorar todos los archivos .log
 *.log
 
-# Ignorar el archivo .env
-.env
