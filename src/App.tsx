@@ -73,7 +73,6 @@ const App = () => {
   };
 
   const subContractInfo = {
-    
     content: [
       {
         title: "Drywall Services",
@@ -91,8 +90,38 @@ const App = () => {
           "Retrofitting for energy efficiency",
         ],
       },
+      // Carta 1: Expert Craftsmanship
+      {
+        title: "Expert Craftsmanship",
+        details: [
+          "Our skilled professionals excel in drywall installation, finishing, and insulation placement, ensuring seamless results that meet or exceed industry standards."
+        ],
+      },
+      // Carta 2: Timely Execution
+      {
+        title: "Timely Execution",
+        details: [
+          "We understand the importance of sticking to schedules, and we work diligently to keep your projects on track."
+        ],
+      },
+      // Carta 3: Scalable Solutions
+      {
+        title: "Scalable Solutions",
+        details: [
+          "Whether you’re building single-family homes, multifamily developments, or large-scale projects, we have the capacity and expertise to handle jobs of any size."
+        ],
+      },
+      // Carta 4: Attention to Detail
+      {
+        title: "Attention to Detail",
+        details: [
+          "From smooth drywall finishes to energy-efficient insulation installation, we take pride in delivering work that enhances both the aesthetics and functionality of your builds."
+        ],
+      },
     ],
   };
+  
+  
 
   const contractInfo =
     selectedContract === "General" ? generalContractInfo : subContractInfo;
