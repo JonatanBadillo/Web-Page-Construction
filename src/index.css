@@ -338,4 +338,79 @@
 }
 
 
+/*/////////////////////////////////////////////////////*/
+.contract-info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Distribuir en columnas */
+  gap: 20px; /* Espacio entre las cartas */
+  margin-top: 20px;
+  padding: 0 20px; /* Agregar espacio lateral para que las cartas no estén pegadas al borde */
+}
+
+.contract-card {
+  background-color: #2a2a2a; /* Fondo oscuro */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Sombra sutil */
+  width: 100%; /* Ocupa el 100% del ancho disponible */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+.contract-card:hover {
+  transform: translateY(-10px); /* Efecto al pasar el mouse */
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.7); /* Sombra más fuerte */
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card-header h3 {
+  color: #ffd00e; /* Título dorado */
+  font-size: 1.8rem;
+}
+
+.contract-card ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.contract-card li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.contract-card li svg {
+  font-size: 1.2rem; /* Tamaño de los iconos */
+  margin-right: 8px;
+  color: #ffd00e; /* Iconos dorados */
+}
+
+.contract-card li:hover {
+  color: #ffd00e;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+  .contract-info-cards {
+    grid-template-columns: 1fr; /* Solo una columna en pantallas pequeñas */
+    padding: 0 10px; /* Reduce el espacio lateral en pantallas pequeñas */
+  }
+
+  .contract-card {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+/* Centrar la última carta en una fila nueva */
+.contract-info-cards > :last-child {
+  margin-left: auto;
+  margin-right: auto;
+}
 

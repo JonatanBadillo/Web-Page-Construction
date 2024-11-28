@@ -11,6 +11,8 @@ import Company3 from "./assets/company3.jpg";
 import WhoWeServe from "./Components/WhoWeServe";
 import Form from "./Components/Form/Form";
 import "./index.css";
+import { FaHammer, FaTools } from "react-icons/fa";
+
 
 const App = () => {
   const [selectedContract, setSelectedContract] = useState("General");
@@ -27,8 +29,7 @@ const App = () => {
   };
 
   const generalContractInfo = {
-    title: "General Contracting Services",
-    description: "Complete Solutions for Residential and Commercial Properties",
+
     content: [
       {
         title: "Renovations and Remodeling",
@@ -72,8 +73,7 @@ const App = () => {
   };
 
   const subContractInfo = {
-    title: "Subcontractor Services: Drywall and Insulation",
-    description: "Expert Drywall and Insulation Services for Builders and Developers",
+    
     content: [
       {
         title: "Drywall Services",
@@ -212,7 +212,7 @@ const App = () => {
         </h1>
       </center>
 
-      {/* Contract Selector and Gallery */}
+      {/* Contract Selector*/}
       <div ref={projectsRef}>
         <ContractSelector
           selectedContract={selectedContract}
@@ -220,14 +220,19 @@ const App = () => {
         />
        {/* Aquí mostramos las tarjetas según el contrato seleccionado */}
        <div className="contract-info-cards">
-          <h2>{contractInfo.title}</h2>
-          <p>{contractInfo.description}</p>
+
           {contractInfo.content.map((section, index) => (
             <div key={index} className="contract-card">
-              <h3>{section.title}</h3>
+              <div className="card-header">
+                <FaTools style={{ fontSize: '2rem', color: '#ffd00e', marginRight: '10px' }} />
+                <h3>{section.title}</h3>
+              </div>
               <ul>
                 {section.details.map((item, idx) => (
-                  <li key={idx}>{item}</li>
+                  <li key={idx}>
+                    <FaHammer style={{ marginRight: '8px', color: '#ffd00e' }} />
+                    {item}
+                  </li>
                 ))}
               </ul>
             </div>
