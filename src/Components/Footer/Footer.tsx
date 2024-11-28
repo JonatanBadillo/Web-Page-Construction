@@ -3,6 +3,7 @@ import Sponsor1 from "../../assets/sponsor1.png";
 import Sponsor2 from "../../assets/sponsor2.png";
 import Sponsor3 from "../../assets/sponsor3.png";
 import Sponsor4 from "../../assets/sponsor4.png";
+import { FaLinkedin } from "react-icons/fa";
 
 interface FooterProps {
   onHomeClick: () => void;
@@ -44,10 +45,18 @@ const Footer = ({ onHomeClick, onAboutClick, onServicesClick, onContactClick }: 
       <div className="footer-social">
         <h3 className="footer-subtitle">Follow Us</h3>
         <div className="social-icons">
-          <span className="social-icon">FB</span>
-          <span className="social-icon">TW</span>
-          <span className="social-icon">IG</span>
-          <span className="social-icon">LN</span>
+          {/* <a href="https://www.facebook.com/samalexanderconstruction" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <FaFacebook />
+          </a>
+          <a href="https://twitter.com/samalexanderinc" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <FaTwitter />
+          </a>
+          <a href="https://www.instagram.com/samalexanderconstruction" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <FaInstagram />
+          </a> */}
+          <a href="https://www.linkedin.com/company/sam-alexander-construction-inc/" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <FaLinkedin />
+          </a>
         </div>
       </div>
       <div className="footer-bottom">
