@@ -4,6 +4,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { ReactNode } from 'react';
+import { FaHammer, FaClipboardList, FaCheckCircle, FaArrowRight } from 'react-icons/fa'; // Importando iconos
 
 interface CardProps {
   imageSrc: string;
@@ -13,7 +14,7 @@ interface CardProps {
   buttonText: string;
 }
 
-const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, description }) => {
+const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, description}) => {
   return (
     <Card 
       sx={{ 
@@ -61,6 +62,8 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
           >
             {title}
           </Typography>
+          
+          {/* Agregar iconos junto a la descripción */}
           <div 
             style={{ 
               color: 'white', 
@@ -73,7 +76,34 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
               textShadow: '1px 1px 4px rgba(0, 0, 0, 0.5)', // Sombra de la descripción
             }}
           >
-            {description}  
+            {description}
+          </div>
+
+          {/* Sección de iconos para hacer la carta más llamativa */}
+          <div 
+            style={{ 
+              display: 'flex', 
+              justifyContent: 'space-around', 
+              marginTop: '15px' 
+            }}
+          >
+            {/* Iconos */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <FaHammer size={24} color="#ffd00e" />
+              <Typography variant="body2" sx={{ color: 'white', marginTop: '5px' }}>Craftsmanship</Typography>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <FaClipboardList size={24} color="#ffd00e" />
+              <Typography variant="body2" sx={{ color: 'white', marginTop: '5px' }}>Timely Execution</Typography>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <FaCheckCircle size={24} color="#ffd00e" />
+              <Typography variant="body2" sx={{ color: 'white', marginTop: '5px' }}>Scalable Solutions</Typography>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <FaArrowRight size={24} color="#ffd00e" />
+              <Typography variant="body2" sx={{ color: 'white', marginTop: '5px' }}>Attention to Detail</Typography>
+            </div>
           </div>
         </CardContent>
       </CardActionArea>
