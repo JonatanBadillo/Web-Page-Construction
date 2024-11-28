@@ -1,6 +1,7 @@
 import './Form.css';
 import emailjs from 'emailjs-com';
 import { useRef, useState } from 'react';
+import { FaUser, FaEnvelope, FaPhoneAlt, FaClipboard, FaRegPaperPlane, FaComments } from 'react-icons/fa'; // Importar iconos
 
 const Form = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -8,7 +9,6 @@ const Form = () => {
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
   const sanitizeInput = (value: string) => {
-    // Remueve caracteres especiales
     return value.replace(/[<>/]/g, "").trim();
   };
 
@@ -69,8 +69,8 @@ const Form = () => {
     )
     .then((result) => {
       console.log(result.text);
-      setIsSubmitted(true); // Mostrar mensaje de éxito
-      form.current?.reset(); // Limpiar formulario
+      setIsSubmitted(true);
+      form.current?.reset();
       setErrors({});
     }, (error) => {
       console.log(error.text);
@@ -80,7 +80,7 @@ const Form = () => {
 
   return (
     <div className="form-section">
-      <h1 className="form-title">Contact Us</h1>
+      <h1 className="form-title"><FaComments /> Contact Us</h1> {/* Icono agregado aquí */}
       <div className="form-wrapper">
         {isSubmitted ? (
           <div className="success-message">
@@ -91,43 +91,43 @@ const Form = () => {
           <form ref={form} className="form-container" onSubmit={sendEmail}>
             <div className="form-row">
               <div className="form-col">
-                <label>Name:</label>
+                <label><FaUser /> Name:</label>
                 <input type="text" name="name" required />
                 {errors.name && <small className="error-message">{errors.name}</small>}
               </div>
               <div className="form-col">
-                <label>Last Name:</label>
+                <label><FaUser /> Last Name:</label>
                 <input type="text" name="lastName" required />
                 {errors.lastName && <small className="error-message">{errors.lastName}</small>}
               </div>
             </div>
             <div className="form-row">
               <div className="form-col">
-                <label>Email:</label>
+                <label><FaEnvelope /> Email:</label>
                 <input type="email" name="email" required />
                 {errors.email && <small className="error-message">{errors.email}</small>}
               </div>
               <div className="form-col">
-                <label>Phone number:</label>
+                <label><FaPhoneAlt /> Phone number:</label>
                 <input type="tel" name="phone" required />
                 {errors.phone && <small className="error-message">{errors.phone}</small>}
               </div>
             </div>
             <div className="form-row">
               <div className="form-col-full">
-                <label>Subject:</label>
+                <label><FaClipboard /> Subject:</label>
                 <input type="text" name="subject" placeholder="Enter the subject" required />
                 {errors.subject && <small className="error-message">{errors.subject}</small>}
               </div>
             </div>
             <div className="form-row">
               <div className="form-col-full">
-                <label>Reason for contact:</label>
+                <label><FaClipboard /> Reason for contact:</label>
                 <textarea name="reason" rows={4} placeholder="Please specify your reason for contacting us" required></textarea>
                 {errors.reason && <small className="error-message">{errors.reason}</small>}
               </div>
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit"><FaRegPaperPlane /> Submit</button>
           </form>
         )}
       </div>
