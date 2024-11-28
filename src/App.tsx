@@ -3,7 +3,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import CustomCard from "./Components/Cards/Card";
 import Footer from "./Components/Footer/Footer";
 import ContractSelector from "./Components/ContractSelector";
-import DynamicImageGallery from "./Components/DynamicImageGallery";
+// import DynamicImageGallery from "./Components/DynamicImageGallery";
 import Banner from "./assets/vid1.mp4";
 import Company1 from "./assets/company.jpg";
 import Company2 from "./assets/company2.jpg";
@@ -26,42 +26,79 @@ const App = () => {
     ref.current.scrollIntoView({ behavior: "smooth" });
   };
 
-  const generalContractImages = [
-    {
-      original: "https://picsum.photos/id/1018/1000/600/",
-      thumbnail: "https://picsum.photos/id/1018/250/150/",
-      description: "Overseeing the entire project",
-    },
-    {
-      original: "https://picsum.photos/id/1015/1000/600/",
-      thumbnail: "https://picsum.photos/id/1015/250/150/",
-      description: "Managing resources and teams",
-    },
-    {
-      original: "https://picsum.photos/id/1019/1000/600/",
-      thumbnail: "https://picsum.photos/id/1019/250/150/",
-    },
-  ];
+  const generalContractInfo = {
+    title: "General Contracting Services",
+    description: "Complete Solutions for Residential and Commercial Properties",
+    content: [
+      {
+        title: "Renovations and Remodeling",
+        details: [
+          "Interior renovations (kitchen, bathroom, flooring, painting, etc.)",
+          "Exterior upgrades (siding replacement, roofing, windows, and doors)",
+          "Tenant improvement projects to customize units for new occupants",
+        ],
+      },
+      {
+        title: "Maintenance and Repairs",
+        details: [
+          "Plumbing repairs (leaks, fixture replacements, water heater installation)",
+          "Electrical repairs (wiring, lighting, circuit breakers)",
+        ],
+      },
+      {
+        title: "Property Turnover Services",
+        details: [
+          "Complete unit turnover preparation (painting, flooring, appliance replacement)",
+          "Deep cleaning services",
+          "Addressing tenant damage and restoring units to rentable condition",
+        ],
+      },
+      {
+        title: "Code Compliance and Safety Upgrades",
+        details: [
+          "ADA compliance modifications",
+          "Replace and Install Fire doors",
+          "Structural repairs to ensure building safety",
+        ],
+      },
+      {
+        title: "Preventative Maintenance Programs",
+        details: [
+          "Scheduled inspections and upkeep to prevent costly repairs",
+          "Regular servicing of plumbing, and electrical systems",
+        ],
+      },
+    ],
+  };
 
-  const subContractImages = [
-    {
-      original: "https://picsum.photos/id/1021/1000/600/",
-      thumbnail: "https://picsum.photos/id/1021/250/150/",
-      description: "Specialized electrical work",
-    },
-    {
-      original: "https://picsum.photos/id/1022/1000/600/",
-      thumbnail: "https://picsum.photos/id/1022/250/150/",
-      description: "Focused plumbing services",
-    },
-    {
-      original: "https://picsum.photos/id/1023/1000/600/",
-      thumbnail: "https://picsum.photos/id/1023/250/150/",
-    },
-  ];
+  const subContractInfo = {
+    title: "Subcontractor Services: Drywall and Insulation",
+    description: "Expert Drywall and Insulation Services for Builders and Developers",
+    content: [
+      {
+        title: "Drywall Services",
+        details: [
+          "Installation and taping",
+          "Texture application and finishing",
+          "Patching and repairs",
+        ],
+      },
+      {
+        title: "Insulation Services",
+        details: [
+          "Thermal and soundproofing insulation",
+          "Blown-in, batt, and spray foam installation",
+          "Retrofitting for energy efficiency",
+        ],
+      },
+    ],
+  };
 
-  const imagesToDisplay =
-    selectedContract === "General" ? generalContractImages : subContractImages;
+  const contractInfo =
+    selectedContract === "General" ? generalContractInfo : subContractInfo;
+
+
+    
 
   return (
     <div className="app-container">
@@ -181,7 +218,21 @@ const App = () => {
           selectedContract={selectedContract}
           setSelectedContract={setSelectedContract}
         />
-        <DynamicImageGallery images={imagesToDisplay} />
+       {/* Aquí mostramos las tarjetas según el contrato seleccionado */}
+       <div className="contract-info-cards">
+          <h2>{contractInfo.title}</h2>
+          <p>{contractInfo.description}</p>
+          {contractInfo.content.map((section, index) => (
+            <div key={index} className="contract-card">
+              <h3>{section.title}</h3>
+              <ul>
+                {section.details.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Contact Form */}

@@ -9,7 +9,7 @@ const Form = () => {
 
   const sanitizeInput = (value: string) => {
     // Remueve caracteres especiales
-    return value.replace(/[<>\/]/g, "").trim();
+    return value.replace(/[<>/]/g, "").trim();
   };
 
   const validateForm = () => {
@@ -21,7 +21,7 @@ const Form = () => {
     const subject = sanitizeInput(formData.get("subject")?.toString() || "");
     const reason = sanitizeInput(formData.get("reason")?.toString() || "");
 
-    let formErrors: { [key: string]: string } = {};
+    const formErrors: { [key: string]: string } = {};
 
     if (!name || name.length < 2) {
       formErrors.name = "Please enter a valid name (at least 2 characters).";

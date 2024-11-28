@@ -1,5 +1,5 @@
-// ContractSelector.tsx
 import React from 'react';
+import { FaHammer, FaWrench, FaCheckCircle } from 'react-icons/fa'; // Importamos iconos adicionales
 
 interface ContractSelectorProps {
   selectedContract: string;
@@ -15,25 +15,41 @@ const ContractSelector: React.FC<ContractSelectorProps> = ({ selectedContract, s
           className={`contract-button ${selectedContract === 'General' ? 'active' : ''}`}
           onClick={() => setSelectedContract('General')}
         >
-          General Contractor
+          <FaHammer style={{ marginRight: '8px' }} />
+          General Contractor Services
         </button>
         <button
           className={`contract-button ${selectedContract === 'Sub' ? 'active' : ''}`}
           onClick={() => setSelectedContract('Sub')}
         >
-          Sub Contractor
+          <FaWrench style={{ marginRight: '8px' }} />
+          SubContractor Services
         </button>
       </div>
 
       <div className="contract-description">
         {selectedContract === 'General' ? (
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quibusdam obcaecati reiciendis mollitia numquam non, sapiente accusamus, itaque minima iure, corporis nihil nesciunt! Quas modi sit quod suscipit, laborum reprehenderit?
-          </p>
+          <div className="description-content">
+            <h3><FaCheckCircle style={{ marginRight: '10px', color: 'yellow' }} />Complete Solutions for Residential and Commercial Properties</h3>
+            <p className="description-text">
+              Sam Alexander Construction Inc. specializes in providing full-service general contracting tailored
+              to the unique needs of property managers. Whether you're managing a multifamily property or
+              a commercial space, we ensure your properties are maintained and improved to the highest
+              standards.
+            </p>
+            
+          </div>
         ) : (
-          <p>
-            2Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ratione quasi dignissimos illum animi, cumque pariatur veniam repellat porro officiis dolor quibusdam ullam, vero tempora consequuntur facere quidem iure hic.
-          </p>
+          <div className="description-content">
+            <h3><FaCheckCircle style={{ marginRight: '10px', color: 'yellow' }} />Subcontractor Services: Drywall and Insulation</h3>
+            <p className="description-text">
+              At Sam Alexander Construction Inc., we are proud to offer specialized subcontractor services
+              in drywall and insulation, catering to home builders and developers. Our team brings
+              precision, reliability, and a commitment to excellence to every project, ensuring your
+              construction needs are met efficiently and to the highest standards.
+            </p>
+            
+          </div>
         )}
       </div>
     </div>
