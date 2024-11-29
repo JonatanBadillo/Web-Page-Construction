@@ -3,7 +3,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import CustomCard from "./Components/Cards/Card";
 import Footer from "./Components/Footer/Footer";
 import ContractSelector from "./Components/ContractSelector";
-// import DynamicImageGallery from "./Components/DynamicImageGallery";
+import DynamicImageGallery from "./Components/DynamicImageGallery";
 import Banner from "./assets/vid1.mp4";
 import Company1 from "./assets/company.jpg";
 import Company2 from "./assets/company2.jpg";
@@ -126,7 +126,25 @@ const App = () => {
   const contractInfo =
     selectedContract === "General" ? generalContractInfo : subContractInfo;
 
-
+    const projectImages = [
+      {
+        original: Company1, // Ruta de la imagen
+        thumbnail: Company1, // Ruta del thumbnail
+        description: "Project 1: Modern Office Building"
+      },
+      {
+        original: Company1,
+        thumbnail: Company1,
+        description: "Project 2: Residential Complex"
+      },
+      {
+        original: Company1,
+        thumbnail: Company1,
+        description: "Project 3: Commercial Plaza"
+      },
+      // Agrega más imágenes según sea necesario
+    ];
+    
     
 
   return (
@@ -240,6 +258,8 @@ const App = () => {
           <span>Our Projects</span>
         </h1>
       </center>
+
+      <DynamicImageGallery images={projectImages} />
 
       {/* Contract Selector*/}
       <div ref={projectsRef}>
