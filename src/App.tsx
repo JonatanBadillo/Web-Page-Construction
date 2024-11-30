@@ -47,6 +47,26 @@ import Img32 from "./assets/img32.jpg";
 import Img33 from "./assets/img33.jpg";
 import Img34 from "./assets/img34.jpg";
 import Img35 from "./assets/img35.jpg";
+import Img36 from "./assets/img36.jpg";
+import Img37 from "./assets/img37.jpg";
+import Img38 from "./assets/img38.jpg";
+import Img39 from "./assets/img39.jpg";
+import Img40 from "./assets/img40.jpg";
+import Img41 from "./assets/img41.jpg";
+import Img42 from "./assets/img42.jpg";
+import Img43 from "./assets/img43.jpg";
+import Img44 from "./assets/img44.jpg";
+import Img45 from "./assets/img45.jpg";
+import Img46 from "./assets/img46.jpg";
+import Img47 from "./assets/img47.jpg";
+import Img48 from "./assets/img48.jpg";
+import Img49 from "./assets/img49.jpg";
+import Img50 from "./assets/img50.jpg";
+import Img51 from "./assets/img51.jpg";
+import Img52 from "./assets/img52.jpg";
+import Img53 from "./assets/img53.jpg";
+import Img54 from "./assets/img54.jpg";
+import Img55 from "./assets/img55.jpg";
 
 
 
@@ -340,14 +360,104 @@ const App = () => {
       description: "Home Depot bathroom renovation"
     },
     {
-      original: Img1,
-      thumbnail: Img1,
-      description: ""
+      original: Img36,
+      thumbnail: Img36,
+      description: "Lowe's bathroom renovation"
     },
     {
-      original: Img1,
-      thumbnail: Img1,
-      description: ""
+      original: Img37,
+      thumbnail: Img37,
+      description: "Lowe's bathroom renovation"
+    },
+    {
+      original: Img38,
+      thumbnail: Img38,
+      description: "Lowe's bathroom renovation"
+    },
+    {
+      original: Img39,
+      thumbnail: Img39,
+      description: "Lowe's bathroom renovation"
+    },
+    {
+      original: Img40,
+      thumbnail: Img40,
+      description: "Lowe's bathroom renovation"
+    },
+    {
+      original: Img41,
+      thumbnail: Img41,
+      description: "Lowe's bathroom renovation"
+    },
+    {
+      original: Img42,
+      thumbnail: Img42,
+      description: "7-Eleven interior renovation store"
+    },
+    {
+      original: Img43,
+      thumbnail: Img43,
+      description: "7-Eleven interior renovation store"
+    },
+    {
+      original: Img44,
+      thumbnail: Img44,
+      description: "7-Eleven interior renovation store"
+    },
+    {
+      original: Img45,
+      thumbnail: Img45,
+      description: "7-Eleven interior renovation store"
+    },
+    {
+      original: Img46,
+      thumbnail: Img46,
+      description: "7-Eleven interior renovation store"
+    },
+    {
+      original: Img47,
+      thumbnail: Img47,
+      description: "7-Eleven interior renovation store"
+    },
+    {
+      original: Img48,
+      thumbnail: Img48,
+      description: "7-Eleven interior renovation store"
+    },
+    {
+      original: Img49,
+      thumbnail: Img49,
+      description: "7-Eleven interior renovation store"
+    },
+    {
+      original: Img50,
+      thumbnail: Img50,
+      description: "7-Eleven interior renovation store"
+    },
+    {
+      original: Img51,
+      thumbnail: Img51,
+      description: "Sephora"
+    },
+    {
+      original: Img52,
+      thumbnail: Img52,
+      description: "Sephora"
+    },
+    {
+      original: Img53,
+      thumbnail: Img53,
+      description: "Sephora"
+    },
+    {
+      original: Img54,
+      thumbnail: Img54,
+      description: "Sephora"
+    },
+    {
+      original: Img55,
+      thumbnail: Img55,
+      description: "Sephora"
     },
   ];
 
