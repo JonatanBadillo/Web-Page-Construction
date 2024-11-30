@@ -41,6 +41,13 @@ import Img26 from "./assets/img26.jpg";
 import Img27 from "./assets/img27.jpg";
 import Img28 from "./assets/img28.jpg";
 import Img29 from "./assets/img29.jpg";
+import Img30 from "./assets/img30.jpg";
+import Img31 from "./assets/img31.jpg";
+import Img32 from "./assets/img32.jpg";
+import Img33 from "./assets/img33.jpg";
+import Img34 from "./assets/img34.jpg";
+import Img35 from "./assets/img35.jpg";
+
 
 
 
