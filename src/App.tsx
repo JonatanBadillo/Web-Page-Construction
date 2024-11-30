@@ -12,7 +12,23 @@ import WhoWeServe from "./Components/WhoWeServe";
 import Form from "./Components/Form/Form";
 import "./index.css";
 import { FaHammer, FaTools } from "react-icons/fa";
-
+import Img1 from "./assets/img1.jpg";
+import Img2 from "./assets/img2.jpg";
+import Img3 from "./assets/img3.jpg";
+import Img4 from "./assets/img4.jpg";
+import Img5 from "./assets/img5.jpg";
+import Img6 from "./assets/img6.jpg";
+import Img7 from "./assets/img7.jpg";
+import Img8 from "./assets/img8.jpg";
+import Img9 from "./assets/img9.jpg";
+import Img10 from "./assets/img10.jpg";
+import Img11 from "./assets/img11.jpg";
+import Img12 from "./assets/img12.jpg";
+import Img13 from "./assets/img13.jpg";
+import Img14 from "./assets/img14.jpg";
+import Img15 from "./assets/img15.jpg";
+import Img16 from "./assets/img16.jpg";
+import Img17 from "./assets/img17.jpg";
 
 const App = () => {
   const [selectedContract, setSelectedContract] = useState("General");
@@ -29,7 +45,6 @@ const App = () => {
   };
 
   const generalContractInfo = {
-
     content: [
       {
         title: "Renovations and Remodeling",
@@ -94,58 +109,126 @@ const App = () => {
       {
         title: "Expert Craftsmanship",
         details: [
-          "Our skilled professionals excel in drywall installation, finishing, and insulation placement, ensuring seamless results that meet or exceed industry standards."
+          "Our skilled professionals excel in drywall installation, finishing, and insulation placement, ensuring seamless results that meet or exceed industry standards.",
         ],
       },
       // Carta 2: Timely Execution
       {
         title: "Timely Execution",
         details: [
-          "We understand the importance of sticking to schedules, and we work diligently to keep your projects on track."
+          "We understand the importance of sticking to schedules, and we work diligently to keep your projects on track.",
         ],
       },
       // Carta 3: Scalable Solutions
       {
         title: "Scalable Solutions",
         details: [
-          "Whether you’re building single-family homes, multifamily developments, or large-scale projects, we have the capacity and expertise to handle jobs of any size."
+          "Whether you’re building single-family homes, multifamily developments, or large-scale projects, we have the capacity and expertise to handle jobs of any size.",
         ],
       },
       // Carta 4: Attention to Detail
       {
         title: "Attention to Detail",
         details: [
-          "From smooth drywall finishes to energy-efficient insulation installation, we take pride in delivering work that enhances both the aesthetics and functionality of your builds."
+          "From smooth drywall finishes to energy-efficient insulation installation, we take pride in delivering work that enhances both the aesthetics and functionality of your builds.",
         ],
       },
     ],
   };
-  
-  
 
   const contractInfo =
     selectedContract === "General" ? generalContractInfo : subContractInfo;
 
-    const projectImages = [
-      {
-        original: Company1, // Ruta de la imagen
-        thumbnail: Company1, // Ruta del thumbnail
-        description: "Project 1: Modern Office Building"
-      },
-      {
-        original: Company1,
-        thumbnail: Company1,
-        description: "Project 2: Residential Complex"
-      },
-      {
-        original: Company1,
-        thumbnail: Company1,
-        description: "Project 3: Commercial Plaza"
-      },
-      // Agrega más imágenes según sea necesario
-    ];
-    
-    
+
+
+
+  const projectImages = [
+    {
+      original: Img1, // Ruta de la imagen
+      thumbnail: Img1, // Ruta del thumbnail
+      description: "Completed Project in San Pedro, CA (Los Angeles) 34-Unit Mixed Use Apartment Building",
+    },
+    {
+      original: Img2,
+      thumbnail: Img2,
+      description: "Completed Project in Gardena, CA 15-Unit Mixed Use Apartment Building, Under Construction,"
+    },
+    {
+      original: Img3,
+      thumbnail: Img3,
+      description: "Completed Project Okland,CA Blossom House 36-Town House",
+    },
+    {
+      original: Img4,
+      thumbnail: Img4,
+      description: "Current Project in Cherry Blossom Row Richmond,CA  100-Town House Under Construction"
+    },
+    {
+      original: Img5,
+      thumbnail: Img5,
+      description: "Current Project Round Barn Santa Rosa,CA  245-Town House Under Construction"
+    },
+    {
+      original: Img6,
+      thumbnail: Img6,
+      description: "Current Project Pinnacle Milpitas,CA  56-Town House Under Construction"
+    },
+    {
+      original: Img7,
+      thumbnail: Img7,
+      description: "Completed Project Novato,CA Ascend at Hamilton Field 75-Town House"
+    },
+    {
+      original: Img8,
+      thumbnail: Img8,
+      description: "Completed Project Commerce, CA Rosewood Village  31-townhomes"
+    },
+    {
+      original: Img9,
+      thumbnail: Img9,
+      description: "Completed Project San Rafael,CA the Strand at Loch Lomond Marina—a luxury coastal community 37-Houses"
+    },
+    {
+      original: Img10,
+      thumbnail: Img10,
+      description: "Current Project Concord CA Penny Lane 70-townhomes"
+    },
+    {
+      original: Img11,
+      thumbnail: Img11,
+      description: "Completed Project in Santa Clara,CA Villa Bella 56-Unit Mixed Use Apartment Building"
+    },
+    {
+      original: Img12,
+      thumbnail: Img12,
+      description: "Current Project in Bonnei Brae St,CA Los Angeles  45-Unit Mixed Use Apartment Building"
+    },
+    {
+      original: Img13,
+      thumbnail: Img13,
+      description: "Completed Project in Santa Clara,CA 12-townhomes"
+    },
+    {
+      original: Img14,
+      thumbnail: Img14,
+      description: "Completed Project in Porter Ranch,CA HAMPTON INN & SUITES 100 Rooms"
+    },
+    {
+      original: Img15,
+      thumbnail: Img15,
+      description: "Completed Project in MonteBello,CA 64-Unit Mixed Use Apartment Building"
+    },
+    {
+      original: Img16,
+      thumbnail: Img16,
+      description: "Completed Project in Palo Alto,CA office building"
+    },
+    {
+      original: Img17,
+      thumbnail: Img17,
+      description: "Completed Project in San Francisco ,CA 109-Unit remodeling Apartment Building"
+    },
+  ];
 
   return (
     <div className="app-container">
@@ -267,19 +350,26 @@ const App = () => {
           selectedContract={selectedContract}
           setSelectedContract={setSelectedContract}
         />
-       {/* Aquí mostramos las tarjetas según el contrato seleccionado */}
-       <div className="contract-info-cards">
-
+        {/* Aquí mostramos las tarjetas según el contrato seleccionado */}
+        <div className="contract-info-cards">
           {contractInfo.content.map((section, index) => (
             <div key={index} className="contract-card">
               <div className="card-header">
-                <FaTools style={{ fontSize: '2rem', color: '#ffd00e', marginRight: '10px' }} />
+                <FaTools
+                  style={{
+                    fontSize: "2rem",
+                    color: "#ffd00e",
+                    marginRight: "10px",
+                  }}
+                />
                 <h3>{section.title}</h3>
               </div>
               <ul>
                 {section.details.map((item, idx) => (
                   <li key={idx}>
-                    <FaHammer style={{ marginRight: '8px', color: '#ffd00e' }} />
+                    <FaHammer
+                      style={{ marginRight: "8px", color: "#ffd00e" }}
+                    />
                     {item}
                   </li>
                 ))}
