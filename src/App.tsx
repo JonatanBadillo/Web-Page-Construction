@@ -29,6 +29,20 @@ import Img14 from "./assets/img14.jpg";
 import Img15 from "./assets/img15.jpg";
 import Img16 from "./assets/img16.jpg";
 import Img17 from "./assets/img17.jpg";
+import Img18 from "./assets/img18.jpg";
+import Img19 from "./assets/img19.jpg";
+import Img20 from "./assets/img20.jpg";
+import Img21 from "./assets/img21.jpg";
+import Img22 from "./assets/img22.jpg";
+import Img23 from "./assets/img23.jpg";
+import Img24 from "./assets/img24.jpg";
+import Img25 from "./assets/img25.jpg";
+import Img26 from "./assets/img26.jpg";
+import Img27 from "./assets/img27.jpg";
+import Img28 from "./assets/img28.jpg";
+import Img29 from "./assets/img29.jpg";
+
+
 
 const App = () => {
   const [selectedContract, setSelectedContract] = useState("General");
@@ -227,6 +241,106 @@ const App = () => {
       original: Img17,
       thumbnail: Img17,
       description: "Completed Project in San Francisco ,CA 109-Unit remodeling Apartment Building"
+    },/////////////////
+    {
+      original: Img18,
+      thumbnail: Img18,
+      description: "Completed turnover unit in Los Angeles"
+    },
+    {
+      original: Img19,
+      thumbnail: Img19,
+      description: "Completed unit new construction in Santa Clara, CA"
+    },
+    {
+      original: Img20,
+      thumbnail: Img20,
+      description: "Completed unit new construction in Santa Clara, CA"
+    },
+    {
+      original: Img21,
+      thumbnail: Img21,
+      description: "Completed unit new construction in Santa Clara, CA"
+    },
+    {
+      original: Img22,
+      thumbnail: Img22,
+      description: "Completed unit new construction in Santa Clara, CA"
+    },
+    {
+      original: Img23,
+      thumbnail: Img23,
+      description: "Completed unit new construction in Santa Clara, CA"
+    },
+    {
+      original: Img24,
+      thumbnail: Img24,
+      description: "Completed unit new construction in Santa Clara, CA"
+    },
+    {
+      original: Img25,
+      thumbnail: Img25,
+      description: "Completed unit new construction in Santa Clara, CA"
+    },
+    {
+      original: Img26,
+      thumbnail: Img26,
+      description: "Completed unit new construction in Santa Clara, CA"
+    },
+    {
+      original: Img27,
+      thumbnail: Img27,
+      description: "Completed unit new construction in Santa Clara, CA"
+    },
+    {
+      original: Img28,
+      thumbnail: Img28,
+      description: "Completed unit new construction in Santa Clara, CA"
+    },
+    {
+      original: Img29,
+      thumbnail: Img29,
+      description: "Completed unit new construction in Santa Clara, CA"
+    },
+    {
+      original: Img30,
+      thumbnail: Img30,
+      description: "Home Depot bathroom renovation"
+    },
+    {
+      original: Img31,
+      thumbnail: Img31,
+      description: "Home Depot bathroom renovation"
+    },
+    {
+      original: Img32,
+      thumbnail: Img32,
+      description: "Home Depot bathroom renovation"
+    },
+    {
+      original: Img33,
+      thumbnail: Img33,
+      description: "Home Depot bathroom renovation"
+    },
+    {
+      original: Img34,
+      thumbnail: Img34,
+      description: "Home Depot bathroom renovation"
+    },
+    {
+      original: Img35,
+      thumbnail: Img35,
+      description: "Home Depot bathroom renovation"
+    },
+    {
+      original: Img1,
+      thumbnail: Img1,
+      description: ""
+    },
+    {
+      original: Img1,
+      thumbnail: Img1,
+      description: ""
     },
   ];
 
