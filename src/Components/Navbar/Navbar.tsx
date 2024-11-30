@@ -39,6 +39,7 @@ const Navbar = ({ onHomeClick, onAboutClick, onOurWorkClick, onContactClick, win
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+      <img src={logo} alt="Logo" style={{ height: '50px' , width: '50px', marginTop: '15px', marginBottom: '2px'}} onClick={handleTitleClick} />
       <Typography variant="h6" sx={{ my: 2 }}>
         Sam Alexander Construction Inc.
       </Typography>
