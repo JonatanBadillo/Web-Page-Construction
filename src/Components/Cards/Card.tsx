@@ -57,13 +57,12 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
             component="div" 
             color="rgba(255, 215, 0, 0.8)"
             sx={{
-              fontSize: '1.8rem', // Tamaño del título
+              fontSize: '1.5rem', // Tamaño del título
               fontWeight: 'bold',
-              textTransform: 'uppercase',
               textShadow: '2px 2px 6px rgba(0, 0, 0, 0.6)', // Sombra del texto
               letterSpacing: '1.5px', // Espaciado entre letras
               marginBottom: '10px',
-              height: '60px', // Altura del título
+              height: '100%', // Altura del título
             }}
           >
             {title}
