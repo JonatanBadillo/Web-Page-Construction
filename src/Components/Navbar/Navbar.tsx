@@ -89,6 +89,13 @@ const Navbar = ({ onHomeClick, onAboutClick, onOurWorkClick, onContactClick, win
           >
             <MenuIcon />
           </IconButton>
+          {/* Esto solo se muestra en dispositivos pequeños */}
+          <Box sx={{ display: { xs: 'flex', sm: 'none' }, alignItems: 'center' }}>
+            <img src={logo} alt="Logo" style={{ height: '40px', width: '40px' }} />
+            <Typography variant="subtitle1" sx={{ marginLeft: 1 , color: '#ffd00e',}}>
+              Sam Alexander Construction Inc.
+            </Typography>
+          </Box>
 
           {/* Logo de la empresa */}
           <Box 
