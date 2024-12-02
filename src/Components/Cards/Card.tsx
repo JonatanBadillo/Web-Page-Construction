@@ -18,18 +18,23 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
   return (
     <Card 
       sx={{ 
-        maxWidth: '60vh', 
+        maxWidth: {
+          xs: '90%', // Ancho completo en pantallas pequeñas
+          sm: '100%',
+          md: '60vh',
+        }, 
+        height: 'auto%',
         backgroundColor: 'rgba(30, 30, 30, 0.9)', 
         borderRadius: '10px', 
         overflow: 'hidden',
         transition: 'transform 0.3s, box-shadow 0.3s, background-color 0.3s', 
         border: '1px solid transparent', 
+        margin: '16px', // Agrega márgenes para separar las tarjetas
         '&:hover': { 
-          transform: 'scale(1.05)', 
           boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.5)', 
           backgroundColor: 'rgba(50, 50, 50, 1)', 
           border: '1px solid rgba(255, 215, 0, 0.8)', 
-        } 
+        } ,
       }}
     >
       <CardActionArea>
@@ -58,6 +63,7 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
               textShadow: '2px 2px 6px rgba(0, 0, 0, 0.6)', // Sombra del texto
               letterSpacing: '1.5px', // Espaciado entre letras
               marginBottom: '10px',
+              height: '60px', // Altura del título
             }}
           >
             {title}

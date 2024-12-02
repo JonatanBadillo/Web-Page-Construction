@@ -523,17 +523,28 @@ const App = () => {
               <li>
                 We have been in the construction business for over 24 years.
               </li>
-              <li>We provide high-quality services to our clients.</li>
               <li>
-                Our team has completed numerous projects, from small to
-                large-scale constructions.
+                We provide high-quality services to our clients.
               </li>
               <li>
-                We have built a solid reputation for delivering high-quality
-                construction projects.
+                Our team has completed numerous projects.
               </li>
+              <li>
+                From small to large-scale constructions.
+              </li>
+              <li>
+                We have built a solid reputation for delivering high-quality construction projects.
+              </li>
+              <li>
+                Our clients trust us for our consistent quality and attention to detail.
+              </li>
+              <li>
+              We deliver innovative solutions.
+              </li>
+              
             </ul>
           }
+          
           buttonText="Learn More"
         />
 
