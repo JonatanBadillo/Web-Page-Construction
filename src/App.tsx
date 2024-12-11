@@ -11,7 +11,7 @@ import Company3 from "./assets/company3.jpg";
 import WhoWeServe from "./Components/WhoWeServe";
 import Form from "./Components/Form/Form";
 import "./index.css";
-import { FaHammer, FaTools } from "react-icons/fa";
+import { FaHammer, FaClipboardList, FaCheckCircle, FaArrowRight, FaUsers, FaBuilding, FaHistory, FaClock, FaTools, FaStar, FaCog, FaHandshake } from 'react-icons/fa';
 import Img1 from "./assets/img1.jpg";
 import Img2 from "./assets/img2.jpg";
 import Img3 from "./assets/img3.jpg";
@@ -529,6 +529,12 @@ const App = () => {
             </ul>
           }
           buttonText="LinkedIn"
+          features={[
+            { icon: FaUsers, text: "Leadership" },
+            { icon: FaBuilding, text: "Experience" },
+            { icon: FaStar, text: "Excellence" },
+            { icon: FaHandshake, text: "Teamwork" }
+          ]}
         />
 
         <CustomCard
@@ -559,6 +565,12 @@ const App = () => {
           }
           
           buttonText="Learn More"
+          features={[
+            { icon: FaHistory, text: "24+ Years" },
+            { icon: FaCheckCircle, text: "Quality" },
+            { icon: FaClock, text: "Timely" },
+            { icon: FaTools, text: "Skilled" }
+          ]}
         />
 
         <CustomCard
@@ -582,6 +594,12 @@ const App = () => {
             </ul>
           }
           buttonText="Learn More"
+          features={[
+            { icon: FaHammer, text: "Expertise" },
+            { icon: FaCog, text: "Solutions" },
+            { icon: FaClipboardList, text: "Services" },
+            { icon: FaStar, text: "Results" }
+          ]}
         />
       </div>
       <br />

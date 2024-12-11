@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { ReactNode } from 'react';
 import { FaHammer, FaClipboardList, FaCheckCircle, FaArrowRight } from 'react-icons/fa';
+import { IconType } from 'react-icons';
 
 interface CardProps {
   imageSrc: string;
@@ -12,9 +13,13 @@ interface CardProps {
   title: string;
   description: ReactNode;
   buttonText: string;
+  features: Array<{
+    icon: IconType;
+    text: string;
+  }>;
 }
 
-const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, description}) => {
+const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, description, features }) => {
   return (
     <Card 
       sx={{ 
@@ -128,12 +133,7 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
               padding: '10px 0',
             }}
           >
-            {[
-              { icon: FaHammer, text: "Craftsmanship" },
-              { icon: FaClipboardList, text: "Execution" },
-              { icon: FaCheckCircle, text: "Quality" },
-              { icon: FaArrowRight, text: "Progress" }
-            ].map((item, index) => (
+            {features.map((item, index) => (
               <div 
                 key={index}
                 style={{ 
@@ -142,9 +142,6 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
                   alignItems: 'center',
                   transition: 'transform 0.3s ease',
                   cursor: 'pointer',
-                  '&:hover': {
-                    transform: 'translateY(-5px)'
-                  }
                 }}
               >
                 <item.icon 
@@ -153,9 +150,6 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
                   style={{
                     filter: 'drop-shadow(0 2px 4px rgba(255, 208, 14, 0.3))',
                     transition: 'transform 0.3s ease',
-                    '&:hover': {
-                      transform: 'scale(1.1)'
-                    }
                   }}
                 />
                 <Typography 
