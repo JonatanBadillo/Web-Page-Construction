@@ -11,7 +11,7 @@ import Company3 from "./assets/company3.jpg";
 import WhoWeServe from "./Components/WhoWeServe";
 import Form from "./Components/Form/Form";
 import "./index.css";
-import { FaHammer, FaClipboardList, FaCheckCircle, FaArrowRight, FaUsers, FaBuilding, FaHistory, FaClock, FaTools, FaStar, FaCog, FaHandshake } from 'react-icons/fa';
+import { FaHammer, FaTools, FaClipboardList, FaCheckCircle, FaArrowRight, FaUsers, FaBuilding, FaHistory, FaClock, FaStar, FaCog, FaHandshake } from 'react-icons/fa';
 import Img1 from "./assets/img1.jpg";
 import Img2 from "./assets/img2.jpg";
 import Img3 from "./assets/img3.jpg";
