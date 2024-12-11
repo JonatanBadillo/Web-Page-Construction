@@ -139,6 +139,7 @@
   display: flex;
   gap: 20px;
   justify-content: center;
+  margin-top: 30px;
 }
 
 .banner-button {
@@ -235,11 +236,18 @@
 
   .banner-buttons {
     flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    padding: 0 20px;
   }
 
   .banner-button {
+    width: 100%;
+    max-width: 300px;
     padding: 15px 30px;
     font-size: 1.1rem;
+    justify-content: center;
   }
 }
 
@@ -254,6 +262,10 @@
 
   .banner-text p {
     font-size: 1.2rem;
+  }
+
+  .banner-buttons {
+    gap: 12px;
   }
 
   .banner-button {
