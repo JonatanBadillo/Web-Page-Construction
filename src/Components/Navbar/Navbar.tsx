@@ -37,34 +37,81 @@ const Navbar = ({ onHomeClick, onAboutClick, onOurWorkClick, onContactClick, win
     onHomeClick(); // Llamada a onHomeClick para desplazarse al inicio
   };
 
+  // Estilos comunes para los botones
+  const buttonStyle = {
+    color: '#ffd00e',
+    position: 'relative',
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      width: '0',
+      height: '2px',
+      bottom: 0,
+      left: '50%',
+      background: '#ffd00e',
+      transition: 'all 0.3s ease',
+      transform: 'translateX(-50%)',
+    },
+    '&:hover': {
+      backgroundColor: 'transparent',
+      '&::after': {
+        width: '80%',
+      },
+    },
+    mx: 1,
+    textTransform: 'none',
+    fontSize: '1.1rem',
+  };
+
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <img src={logo} alt="Logo" style={{ height: '50px' , width: '50px', marginTop: '15px', marginBottom: '2px'}} onClick={handleTitleClick} />
-      <Typography variant="h6" sx={{ my: 2 }}>
+    <Box onClick={handleDrawerToggle} sx={{ 
+      textAlign: 'center',
+      height: '100%',
+      background: 'linear-gradient(145deg, #000000, #1a1a1a)',
+    }}>
+      <img 
+        src={logo} 
+        alt="Logo" 
+        style={{ 
+          height: '70px', 
+          width: '70px', 
+          marginTop: '20px', 
+          marginBottom: '10px',
+          transition: 'transform 0.3s ease',
+          cursor: 'pointer',
+        }} 
+        onClick={handleTitleClick} 
+      />
+      <Typography variant="h6" sx={{ 
+        my: 2, 
+        color: '#ffd00e',
+        fontWeight: 'bold',
+        letterSpacing: 1.5,
+      }}>
         Sam Alexander Construction Inc.
       </Typography>
-      <Divider sx={{ backgroundColor: '#ffd00e' }} />
+      <Divider sx={{ 
+        backgroundColor: '#ffd00e',
+        opacity: 0.3,
+        margin: '0 20px',
+      }} />
       <List>
-        <ListItem disablePadding>
-          <ListItemButton onClick={onHomeClick} sx={{ textAlign: 'center' }}>
-            <ListItemText primary="Home" />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton onClick={onAboutClick} sx={{ textAlign: 'center' }}>
-            <ListItemText primary="About Us" />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton onClick={onOurWorkClick} sx={{ textAlign: 'center' }}>
-            <ListItemText primary="Our Projects" />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton onClick={onContactClick} sx={{ textAlign: 'center' }}>
-            <ListItemText primary="Contact Us" />
-          </ListItemButton>
-        </ListItem>
+        {['Home', 'About Us', 'Our Projects', 'Contact Us'].map((text, index) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton
+              onClick={[onHomeClick, onAboutClick, onOurWorkClick, onContactClick][index]}
+              sx={{
+                textAlign: 'center',
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 208, 14, 0.1)',
+                },
+              }}
+            >
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
       </List>
     </Box>
   );
@@ -75,11 +122,12 @@ const Navbar = ({ onHomeClick, onAboutClick, onOurWorkClick, onContactClick, win
     <Box sx={{ display: 'flex', marginBottom: 0 }}>
       <CssBaseline />
       <AppBar component="nav" sx={{   
-        backgroundColor: '#000',
-        background: 'radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%)',
-        boxShadow: 'none' // Eliminar sombra de la AppBar
+        backgroundColor: 'rgba(0, 0, 0, 0.95)',
+        backdropFilter: 'blur(8px)',
+        borderBottom: '1px solid rgba(255, 208, 14, 0.1)',
+        boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
       }}>
-        <Toolbar>
+        <Toolbar sx={{ height: { sm: '90px' } }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -89,50 +137,86 @@ const Navbar = ({ onHomeClick, onAboutClick, onOurWorkClick, onContactClick, win
           >
             <MenuIcon />
           </IconButton>
-          {/* Esto solo se muestra en dispositivos pequeños */}
-          <Box sx={{ display: { xs: 'flex', sm: 'none' }, alignItems: 'center' }}>
-            <img src={logo} alt="Logo" style={{ height: '40px', width: '40px' }} />
-            <Typography variant="subtitle1" sx={{ marginLeft: 1 , color: '#ffd00e',}}>
+          {/* Logo versión móvil */}
+          <Box sx={{ 
+            display: { xs: 'flex', sm: 'none' }, 
+            alignItems: 'center',
+            gap: 1,
+          }}>
+            <img 
+              src={logo} 
+              alt="Logo" 
+              style={{ 
+                height: '45px', 
+                width: '45px',
+                transition: 'transform 0.3s ease',
+              }} 
+            />
+            <Typography 
+              variant="subtitle1" 
+              sx={{ 
+                color: '#ffd00e',
+                fontWeight: 600,
+                letterSpacing: 1,
+              }}
+            >
               Sam Alexander Construction Inc.
             </Typography>
           </Box>
 
-          {/* Logo de la empresa */}
+          {/* Logo versión desktop */}
           <Box 
             component="img"
             src={logo}
             alt="Company Logo"
             sx={{
-              height: 90,
-              width: 90,
+              height: 70,
+              width: 70,
               mr: 2,
               display: { xs: 'none', sm: 'block' },
-              padding: 1,
+              transition: 'transform 0.3s ease',
+              '&:hover': {
+                transform: 'scale(1.05)',
+              },
+              cursor: 'pointer',
             }}
+            onClick={handleTitleClick}
           />
 
           <Typography
-            variant="h6"
+            variant="h5"
             component="div"
-            onClick={handleTitleClick} // Desplazarse al tope al hacer clic
+            onClick={handleTitleClick}
             sx={{
               flexGrow: 1,
               display: { xs: 'none', sm: 'block' },
               color: '#ffd00e',
               fontWeight: 'bold',
               letterSpacing: 2,
-              cursor: 'pointer', // Añadir cursor pointer
+              cursor: 'pointer',
+              transition: 'opacity 0.3s ease',
+              '&:hover': {
+                opacity: 0.8,
+              },
             }}
           >
             Sam Alexander Construction Inc.
           </Typography>
 
           {/* Botones de Navegación */}
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            <Button onClick={onHomeClick} sx={{ color: '#ffd00e' }}>Home</Button>
-            <Button onClick={onAboutClick} sx={{ color: '#ffd00e' }}>About Us</Button>
-            <Button onClick={onOurWorkClick} sx={{ color: '#ffd00e' }}>Our Projects</Button>
-            <Button onClick={onContactClick} sx={{ color: '#ffd00e' }}>Contact Us</Button>
+          <Box sx={{ 
+            display: { xs: 'none', sm: 'flex' },
+            gap: 2,
+          }}>
+            {['Home', 'About Us', 'Our Projects', 'Contact Us'].map((text, index) => (
+              <Button 
+                key={text}
+                onClick={[onHomeClick, onAboutClick, onOurWorkClick, onContactClick][index]}
+                sx={buttonStyle}
+              >
+                {text}
+              </Button>
+            ))}
           </Box>
         </Toolbar>
       </AppBar>
