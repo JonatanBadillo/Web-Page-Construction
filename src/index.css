@@ -146,7 +146,6 @@
   display: inline-block; /* Para aplicar margen y alineación */
   overflow: hidden; /* Ocultar el desbordamiento */
   font-family: 'Montserrat', sans-serif; /* Fuente moderna */
-  text-transform: uppercase; /* Texto en mayúsculas */
   letter-spacing: 2px; /* Espaciado entre letras */
 }
 

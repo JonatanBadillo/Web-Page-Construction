@@ -9,10 +9,10 @@ import { RiBuilding2Line } from "react-icons/ri";
 const WhoWeServe = () => {
   return (
     <div className="who-we-serve">
-      <h2>WHO WE SERVE</h2>
+      <h2>Who We Serve</h2>
       <p>
       At Sam Alexander Construction Inc., we view every partnership as an opportunity to help
-builders and developers achieve their vision. Our subcontracting services are designed to
+builders and developers achieve their vision. Our services are designed to
 integrate seamlessly into your workflow, ensuring a hassle-free and productive collaboration.
       </p>
       <div className="service-icons">
