@@ -477,16 +477,29 @@ const App = () => {
         <video src={Banner} autoPlay loop muted />
         <div className="banner-content">
           <div className="banner-text">
-            <h1>Building Dreams Together</h1>
-            <div className="banner-separator"></div>
+            <h1 className="modern-title">
+              Building Dreams <span className="highlight">Together</span>
+            </h1>
+            <div className="banner-separator">
+              <div className="separator-dot"></div>
+            </div>
             <p>Creating our ideal space with top-notch construction.</p>
-            <button
-              className="banner-button"
-              onClick={() => scrollToSection(contactRef)}
-            >
-              Request consultation
-              <span className="button-arrow">→</span>
-            </button>
+            <div className="banner-buttons">
+              <button
+                className="banner-button primary"
+                onClick={() => scrollToSection(contactRef)}
+              >
+                Request consultation
+                <span className="button-arrow">→</span>
+              </button>
+              <button
+                className="banner-button secondary"
+                onClick={() => scrollToSection(projectsRef)}
+              >
+                View Our Projects
+                <span className="button-arrow">→</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
