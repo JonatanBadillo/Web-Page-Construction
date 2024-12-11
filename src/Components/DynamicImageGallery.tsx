@@ -21,7 +21,7 @@ const DynamicImageGallery: React.FC<DynamicImageGalleryProps> = ({ images }) => 
       <ImageGallery
         items={items}
         showBullets={false}
-        showThumbnails={true}
+        showThumbnails={false}
         showFullscreenButton={true}
         showPlayButton={false}
         additionalClass="custom-gallery"
