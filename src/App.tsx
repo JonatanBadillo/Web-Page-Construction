@@ -475,15 +475,19 @@ const App = () => {
       <div ref={bannerRef} className="banner-container">
         <div className="banner-overlay"></div>
         <video src={Banner} autoPlay loop muted />
-        <div className="banner-text">
-          <h1>Building Dreams Together:</h1>
-          <p>Creating our ideal space with top-notch construction.</p>
-          <button
-            className="banner-button"
-            onClick={() => scrollToSection(contactRef)}
-          >
-            Request consultation
-          </button>
+        <div className="banner-content">
+          <div className="banner-text">
+            <h1>Building Dreams Together</h1>
+            <div className="banner-separator"></div>
+            <p>Creating our ideal space with top-notch construction.</p>
+            <button
+              className="banner-button"
+              onClick={() => scrollToSection(contactRef)}
+            >
+              Request consultation
+              <span className="button-arrow">→</span>
+            </button>
+          </div>
         </div>
       </div>
       <br />
