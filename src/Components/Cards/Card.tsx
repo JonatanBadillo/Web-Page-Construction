@@ -32,11 +32,12 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
         background: 'linear-gradient(145deg, rgba(40, 40, 40, 0.9), rgba(20, 20, 20, 0.95))',
         borderRadius: '20px',
         overflow: 'hidden',
-        transition: 'all 0.4s ease-in-out',
+        transition: 'transform 0.3s ease-out',
         position: 'relative',
         margin: '16px',
         backdropFilter: 'blur(10px)',
         border: '1px solid rgba(255, 208, 14, 0.1)',
+        willChange: 'transform',
         '&:hover': { 
           transform: 'translateY(-10px)',
           boxShadow: '0 20px 40px rgba(255, 208, 14, 0.2)',
@@ -45,20 +46,6 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
             transform: 'scale(1.05)',
           }
         },
-        '&::before': {
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          height: '100%',
-          background: 'linear-gradient(180deg, transparent, rgba(255, 208, 14, 0.1))',
-          opacity: 0,
-          transition: 'opacity 0.4s ease-in-out',
-        },
-        '&:hover::before': {
-          opacity: 1,
-        }
       }}
     >
       <CardActionArea>
@@ -69,8 +56,9 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
           alt={imageAlt}
           className="card-media"
           sx={{ 
-            transition: 'transform 0.6s ease-in-out',
+            transition: 'transform 0.3s ease-out',
             filter: 'brightness(0.9)',
+            willChange: 'transform',
             '&:hover': { 
               filter: 'brightness(1.1)'
             }
@@ -129,6 +117,8 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
             style={{ 
               display: 'flex',
               justifyContent: 'space-around',
+              flexWrap: 'wrap',
+              gap: '10px',
               marginTop: '20px',
               padding: '10px 0',
             }}
@@ -142,6 +132,9 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
                   alignItems: 'center',
                   transition: 'transform 0.3s ease',
                   cursor: 'pointer',
+                  flex: '1 1 auto',
+                  minWidth: '80px',
+                  maxWidth: '120px',
                 }}
               >
                 <item.icon 
@@ -159,7 +152,8 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
                     marginTop: '8px',
                     fontSize: '0.9rem',
                     fontWeight: '500',
-                    opacity: 0.9
+                    opacity: 0.9,
+                    textAlign: 'center',
                   }}
                 >
                   {item.text}
