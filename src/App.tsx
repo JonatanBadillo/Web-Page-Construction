@@ -552,12 +552,8 @@ const App = () => {
               <li>
                 We have built a solid reputation for delivering high-quality construction projects.
               </li>
-              <li>
-                Our clients trust us for our consistent quality and attention to detail.
-              </li>
-              <li>
-              We deliver innovative solutions.
-              </li>
+
+
               
             </ul>
           }
@@ -580,7 +576,7 @@ const App = () => {
               <li>Blow-In Insulation</li>
               <li>Foam Insulation</li>
               <li>
-                From Retail, Commercial, and Residential, we deliver exceptional
+                We deliver exceptional
                 results on every project.
               </li>
             </ul>

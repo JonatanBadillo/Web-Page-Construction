@@ -4,7 +4,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { ReactNode } from 'react';
-import { FaHammer, FaClipboardList, FaCheckCircle, FaArrowRight } from 'react-icons/fa'; // Importando iconos
+import { FaHammer, FaClipboardList, FaCheckCircle, FaArrowRight } from 'react-icons/fa';
 
 interface CardProps {
   imageSrc: string;
@@ -19,22 +19,41 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
     <Card 
       sx={{ 
         maxWidth: {
-          xs: '90%', // Ancho completo en pantallas pequeñas
+          xs: '90%',
           sm: '100%',
           md: '60vh',
         }, 
-        height: 'auto%',
-        backgroundColor: 'rgba(30, 30, 30, 0.9)', 
-        borderRadius: '10px', 
+        height: 'auto',
+        background: 'linear-gradient(145deg, rgba(40, 40, 40, 0.9), rgba(20, 20, 20, 0.95))',
+        borderRadius: '20px',
         overflow: 'hidden',
-        transition: 'transform 0.3s, box-shadow 0.3s, background-color 0.3s', 
-        border: '1px solid transparent', 
-        margin: '16px', // Agrega márgenes para separar las tarjetas
+        transition: 'all 0.4s ease-in-out',
+        position: 'relative',
+        margin: '16px',
+        backdropFilter: 'blur(10px)',
+        border: '1px solid rgba(255, 208, 14, 0.1)',
         '&:hover': { 
-          boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.5)', 
-          backgroundColor: 'rgba(50, 50, 50, 1)', 
-          border: '1px solid rgba(255, 215, 0, 0.8)', 
-        } ,
+          transform: 'translateY(-10px)',
+          boxShadow: '0 20px 40px rgba(255, 208, 14, 0.2)',
+          border: '1px solid rgba(255, 208, 14, 0.5)',
+          '& .card-media': {
+            transform: 'scale(1.05)',
+          }
+        },
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '100%',
+          background: 'linear-gradient(180deg, transparent, rgba(255, 208, 14, 0.1))',
+          opacity: 0,
+          transition: 'opacity 0.4s ease-in-out',
+        },
+        '&:hover::before': {
+          opacity: 1,
+        }
       }}
     >
       <CardActionArea>
@@ -43,72 +62,116 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
           height="280"
           image={imageSrc}
           alt={imageAlt}
+          className="card-media"
           sx={{ 
-            transition: 'opacity 0.3s', 
+            transition: 'transform 0.6s ease-in-out',
+            filter: 'brightness(0.9)',
             '&:hover': { 
-              opacity: 0.8 
-            } 
+              filter: 'brightness(1.1)'
+            }
           }}
         />
-        <CardContent sx={{ padding: '20px', textAlign: 'center' }}>
+        <CardContent 
+          sx={{ 
+            padding: '25px',
+            background: 'linear-gradient(180deg, rgba(30, 30, 30, 0.95), rgba(20, 20, 20, 0.98))'
+          }}
+        >
           <Typography 
-            gutterBottom 
             variant="h5" 
             component="div" 
-            color="rgba(255, 215, 0, 0.8)"
             sx={{
-              fontSize: '1.5rem', // Tamaño del título
-              fontWeight: 'bold',
-              textShadow: '2px 2px 6px rgba(0, 0, 0, 0.6)', // Sombra del texto
-              letterSpacing: '1.5px', // Espaciado entre letras
-              marginBottom: '10px',
-              height: '100%', // Altura del título
+              color: '#ffd00e',
+              fontSize: '2rem',
+              fontWeight: '700',
+              textShadow: '0 2px 10px rgba(255, 208, 14, 0.3)',
+              letterSpacing: '1px',
+              marginBottom: '15px',
+              position: 'relative',
+              '&::after': {
+                content: '""',
+                position: 'absolute',
+                bottom: '-8px',
+                left: '0',
+                width: '60px',
+                height: '3px',
+                background: '#ffd00e',
+                borderRadius: '2px',
+                transition: 'width 0.3s ease',
+              },
+              '&:hover::after': {
+                width: '100%',
+              }
             }}
           >
             {title}
           </Typography>
           
-          {/* Agregar iconos junto a la descripción */}
           <div 
             style={{ 
-              color: 'white', 
-              fontSize: '1rem', // Tamaño de la descripción
-              lineHeight: 1.6, // Espaciado entre líneas
-              padding: '10px 0', 
-              borderTop: '1px solid rgba(255, 215, 0, 0.3)', // Línea de separación
-              borderBottom: '1px solid rgba(255, 215, 0, 0.3)', 
-              textAlign: 'left', 
-              textShadow: '1px 1px 4px rgba(0, 0, 0, 0.5)', // Sombra de la descripción
+              color: 'rgba(255, 255, 255, 0.9)',
+              fontSize: '1.1rem',
+              lineHeight: '1.8',
+              padding: '15px 0',
+              borderBottom: '1px solid rgba(255, 208, 14, 0.2)',
+              marginBottom: '20px',
             }}
           >
             {description}
           </div>
 
-          {/* Sección de iconos para hacer la carta más llamativa */}
           <div 
             style={{ 
-              display: 'flex', 
-              justifyContent: 'space-around', 
-              marginTop: '15px' 
+              display: 'flex',
+              justifyContent: 'space-around',
+              marginTop: '20px',
+              padding: '10px 0',
             }}
           >
-            {/* Iconos */}
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <FaHammer size={24} color="#ffd00e" />
-              <Typography variant="body2" sx={{ color: 'white', marginTop: '5px' }}>Craftsmanship</Typography>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <FaClipboardList size={24} color="#ffd00e" />
-              <Typography variant="body2" sx={{ color: 'white', marginTop: '5px' }}>Timely Execution</Typography>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <FaCheckCircle size={24} color="#ffd00e" />
-              <Typography variant="body2" sx={{ color: 'white', marginTop: '5px' }}>Scalable Solutions</Typography>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <FaArrowRight size={24} color="#ffd00e" />
-              <Typography variant="body2" sx={{ color: 'white', marginTop: '5px' }}>Attention to Detail</Typography>
-            </div>
+            {[
+              { icon: FaHammer, text: "Craftsmanship" },
+              { icon: FaClipboardList, text: "Execution" },
+              { icon: FaCheckCircle, text: "Quality" },
+              { icon: FaArrowRight, text: "Progress" }
+            ].map((item, index) => (
+              <div 
+                key={index}
+                style={{ 
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  transition: 'transform 0.3s ease',
+                  cursor: 'pointer',
+                  '&:hover': {
+                    transform: 'translateY(-5px)'
+                  }
+                }}
+              >
+                <item.icon 
+                  size={28} 
+                  color="#ffd00e"
+                  style={{
+                    filter: 'drop-shadow(0 2px 4px rgba(255, 208, 14, 0.3))',
+                    transition: 'transform 0.3s ease',
+                    '&:hover': {
+                      transform: 'scale(1.1)'
+                    }
+                  }}
+                />
+                <Typography 
+                  variant="body2" 
+                  sx={{ 
+                    color: 'white',
+                    marginTop: '8px',
+                    fontSize: '0.9rem',
+                    fontWeight: '500',
+                    opacity: 0.9
+                  }}
+                >
+                  {item.text}
+                </Typography>
+              </div>
+            ))}
           </div>
         </CardContent>
       </CardActionArea>
