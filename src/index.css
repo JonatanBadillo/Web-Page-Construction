@@ -34,9 +34,11 @@
 
 .banner-container {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-top: 130px; /* Añadir padding superior para el navbar */
 }
 
 .banner-overlay {
@@ -52,6 +54,7 @@
     rgba(255, 208, 14, 0.1) 100%
   );
   z-index: 1;
+  will-change: transform;
 }
 
 .banner-container video {
@@ -64,6 +67,8 @@
   height: auto;
   transform: translate(-50%, -50%);
   object-fit: cover;
+  will-change: transform;
+  -webkit-transform: translate(-50%, -50%);
   filter: brightness(0.8) contrast(1.1);
 }
 
@@ -267,53 +272,103 @@
 
 /*Gallery*/
 .section-title {
-  font-size: 4rem; /* Aumentar el tamaño del texto */
-  color: #ffd00e; /* Color dorado */
-  text-align: center; /* Centrar el texto */
-  margin: 40px 0; /* Espacio superior e inferior */
-  position: relative; /* Para posicionar el pseudo-elemento */
-  display: inline-block; /* Para aplicar margen y alineación */
-  overflow: hidden; /* Ocultar el desbordamiento */
-  font-family: 'Montserrat', sans-serif; /* Fuente moderna */
-  letter-spacing: 2px; /* Espaciado entre letras */
+  font-size: 4.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin: 60px 0;
+  position: relative;
+  display: inline-block;
+  color: #ffd00e;
+  letter-spacing: 4px;
+  padding: 20px 30px;
 }
 
-/* Efecto de subrayado animado */
-.section-title:after {
-  content: ''; /* Pseudo-elemento */
-  position: absolute; /* Posición absoluta */
-  left: 50%; /* Centrar horizontalmente */
-  bottom: 0; /* Alinear en la parte inferior */
-  width: 100%; /* Ancho completo */
-  height: 5px; /* Altura del subrayado */
-  background-color: #ffd00e; /* Color del subrayado */
-  transform: translateX(-50%) scaleX(0); /* Iniciar en 0 */
-  transition: transform 0.4s ease; /* Transición suave */
+/* Efecto de línea animada */
+.section-title::before,
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ffd00e, transparent);
+  transition: width 0.5s ease;
 }
 
-/* Efecto al pasar el cursor */
-.section-title:hover:after {
-  transform: translateX(-50%) scaleX(1); /* Escalar al 100% */
+.section-title::before {
+  left: 0;
+  top: 0;
 }
 
-/* Animación de desvanecimiento y transformación para el título */
-.section-title h1 {
-  opacity: 0; /* Comienza invisible */
-  transform: translateY(-20px); /* Desplazamiento hacia arriba */
-  animation: fadeInUp 0.6s forwards; /* Animación */
+.section-title::after {
+  right: 0;
+  bottom: 0;
 }
 
-/* Animación de desvanecimiento */
-@keyframes fadeInUp {
-  to {
-    opacity: 1; /* Hacer visible */
-    transform: translateY(0); /* Volver a la posición original */
+.section-title:hover::before,
+.section-title:hover::after {
+  width: 100%;
+}
+
+/* Efecto de brillo en el texto */
+.section-title span {
+  position: relative;
+  display: inline-block;
+  text-shadow: 0 0 15px rgba(255, 208, 14, 0.3);
+  animation: titlePulse 3s infinite;
+  background: linear-gradient(45deg, #ffd00e, #ffffff, #ffd00e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 8px rgba(255, 208, 14, 0.3));
+}
+
+/* Efecto de resplandor en los bordes */
+.section-title::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  background: linear-gradient(45deg, 
+    transparent,
+    rgba(255, 208, 14, 0.1),
+    transparent
+  );
+  border-radius: 10px;
+  z-index: -1;
+  animation: borderGlow 3s infinite;
+}
+
+@keyframes titlePulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(255, 208, 14, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(255, 208, 14, 0.5));
   }
 }
 
-/* Sombra del texto */
-.section-title span {
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); /* Sombra del texto */
+@keyframes borderGlow {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 3.5rem;
+    padding: 15px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2.5rem;
+    padding: 10px 15px;
+    letter-spacing: 2px;
+  }
 }
 
 /* Estilos para la galería de imágenes */
@@ -536,5 +591,26 @@
 .contract-info-cards > :last-child {
   margin-left: auto;
   margin-right: auto;
+}
+
+html, body {
+  overflow-x: hidden;
+  position: relative;
+  height: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Deshabilitar efectos de hover en dispositivos móviles */
+@media (hover: none) {
+  .banner-button:hover,
+  .banner-button.primary:hover,
+  .banner-button.secondary:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .banner-button:hover .button-arrow {
+    transform: none;
+  }
 }
 
