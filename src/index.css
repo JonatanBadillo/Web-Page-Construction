@@ -38,7 +38,7 @@
   width: 100%;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
-  padding-top: 130px; /* Añadir padding superior para el navbar */
+  padding-top: 150px; /* Añadir padding superior para el navbar */
 }
 
 .banner-overlay {
