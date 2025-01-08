@@ -29,7 +29,7 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
           md: '60vh',
         }, 
         height: 'auto',
-        background: 'linear-gradient(145deg, rgba(40, 40, 40, 0.9), rgba(20, 20, 20, 0.95))',
+        background: 'linear-gradient(145deg, rgba(20, 20, 20, 0.95), rgba(20, 20, 20, 0.95))',
         borderRadius: '20px',
         overflow: 'hidden',
         transition: 'transform 0.3s ease-out',
