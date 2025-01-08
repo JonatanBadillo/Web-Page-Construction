@@ -472,9 +472,7 @@ const App = () => {
             <h1 className="modern-title">
               Building Dreams <span className="highlight">Together</span>
             </h1>
-            <div className="banner-separator">
-              <div className="separator-dot"></div>
-            </div>
+            <br></br>
             <p>Creating our ideal space with top-notch construction.</p>
             <div className="banner-buttons">
               <button
