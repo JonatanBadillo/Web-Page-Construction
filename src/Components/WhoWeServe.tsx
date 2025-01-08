@@ -1,41 +1,43 @@
 import './WhoWeServe.css';
 import { 
-  MdApartment, // Para Multi Family
-  MdStorefront, // Para Commercial
-  MdBusinessCenter, // Para Property Management
-  MdHotel, // Para Hospitality
-  MdHandshake // Para Non Profit
-} from "react-icons/md";
-
+  FaBuilding,      // Para Property Management
+  FaHome,          // Para Residential and Commercial Property Owners
+  FaCity,          // Para Real Estate Developers
+  FaBriefcase,     // Para Local Businesses
+  FaDraftingCompass // Para Architects and Engineers
+} from "react-icons/fa";
 const WhoWeServe = () => {
   return (
     <div className="who-we-serve">
       <h2>Who We Serve</h2>
       <p>
-        At Sam Alexander Construction Inc., we view every partnership as an opportunity to help
-        builders and developers achieve their vision. Our services are designed to
-        integrate seamlessly into your workflow, ensuring a hassle-free and productive collaboration.
+      At Sam Alexander Construction Inc., we see every partnership as an opportunity to deliver exceptional value and expertise. We proudly serve:
       </p>
       <div className="service-icons">
         <div className="service-icon">
-          <MdApartment />
-          <h3>MULTI FAMILY</h3>
+        <FaBuilding />
+          <h3>Property Management Companies</h3>
+          <p>Delivering renovations, repairs, maintenance, and tenant improvements to enhance property functionality and long-term value.</p>
         </div>
         <div className="service-icon">
-          <MdStorefront />
-          <h3>COMMERCIAL</h3>
+        <FaHome />
+          <h3>Residential and Commercial Property Owners</h3>
+          <p>Offering comprehensive contracting services for remodeling, restoration, and custom projects tailored to unique needs.</p>
         </div>
         <div className="service-icon">
-          <MdBusinessCenter />
-          <h3>PROPERTY MANAGEMENT</h3>
+        <FaCity />
+          <h3>Real Estate Developers</h3>
+          <p>Providing expert construction and project management for multifamily and mixed-use development projects.</p>
         </div>
         <div className="service-icon">
-          <MdHotel />
-          <h3>HOSPITALITY</h3>
+        <FaBriefcase />
+          <h3>Local Businesses</h3>
+          <p>Crafting tenant improvements and facility upgrades to create functional, customized spaces that support business success.</p>
         </div>
         <div className="service-icon">
-          <MdHandshake />
-          <h3>NON PROFIT</h3>
+        <FaDraftingCompass />
+          <h3>Architects and Engineers</h3>
+          <p>Collaborating closely to transform design visions into reality with precision and attention to detail.</p>
         </div>
       </div>
     </div>

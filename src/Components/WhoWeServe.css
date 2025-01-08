@@ -131,6 +131,13 @@
   backdrop-filter: blur(5px); /* Efecto de desenfoque de fondo */
 }
 
+.service-icon p {
+  margin-top: 15px;
+  font-size: 1.2rem; /* Reducir el tamaño de los párrafos */
+  line-height: 1.4; /* Mejorar legibilidad */
+  text-align: center; /* Centrar el texto */
+}
+
 .service-icon:hover {
   transform: translateY(-15px); /* Moverse hacia arriba en hover */
   box-shadow: 0 10px 30px rgba(255, 215, 0, 0.7); /* Sombra dorada */
