@@ -40,10 +40,7 @@ const ContractSelector: React.FC<ContractSelectorProps> = ({ selectedContract, s
               Complete Solutions for Residential and Commercial Properties
             </h3>
             <p className="description-text">
-              Sam Alexander Construction Inc. specializes in providing full-service general contracting tailored
-              to the unique needs of property managers. Whether you're managing a multifamily property or
-              a commercial space, we ensure your properties are maintained and improved to the highest
-              standards.
+            At Sam Alexander Construction Inc., we specialize in delivering full-service general contracting solutions tailored to meet the unique demands of property managers and owners. Whether overseeing a multifamily residence or a commercial facility, our team ensures that every property is expertly, renovated, and enhanced to the highest standards. From large-scale improvements, we partner with property managers and owners to provide reliable, high-quality services that maximize property value and tenant/resident satisfaction.
             </p>
           </div>
         ) : (

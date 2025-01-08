@@ -20,7 +20,7 @@ import Img5 from "./assets/img5.jpg";
 import Img6 from "./assets/img6.jpg";
 import Img7 from "./assets/img7.jpg";
 import Img8 from "./assets/img8.jpg";
-import Img9 from "./assets/img9.jpg";
+// import Img9 from "./assets/img9.jpg";
 import Img10 from "./assets/img10.jpg";
 import Img11 from "./assets/img11.jpg";
 import Img12 from "./assets/img12.jpg";
@@ -67,8 +67,11 @@ import Img52 from "./assets/img52.jpg";
 import Img53 from "./assets/img53.jpg";
 import Img54 from "./assets/img54.jpg";
 import Img55 from "./assets/img55.jpg";
-
-
+import { FaBriefcase, FaBullseye, FaLightbulb, FaWrench, FaClipboardCheck, FaCogs, FaEye, FaTrophy } from 'react-icons/fa';
+import BusinessOverviewImg from "./assets/image1.jpg";
+import MissionStatementImg from "./assets/image2.jpg";
+import ServicesImg from "./assets/image3.jpg";
+import VisionImg from "./assets/image4.jpg";
 
 
 const App = () => {
@@ -118,13 +121,7 @@ const App = () => {
           "Structural repairs to ensure building safety",
         ],
       },
-      {
-        title: "Preventative Maintenance Programs",
-        details: [
-          "Scheduled inspections and upkeep to prevent costly repairs",
-          "Regular servicing of plumbing, and electrical systems",
-        ],
-      },
+      
     ],
   };
 
@@ -223,11 +220,6 @@ const App = () => {
       original: Img8,
       thumbnail: Img8,
       description: "Completed Project Commerce, CA Rosewood Village  31-townhomes"
-    },
-    {
-      original: Img9,
-      thumbnail: Img9,
-      description: "Completed Project San Rafael,CA the Strand at Loch Lomond Marina—a luxury coastal community 37-Houses"
     },
     {
       original: Img10,
@@ -601,7 +593,100 @@ const App = () => {
             { icon: FaStar, text: "Results" }
           ]}
         />
+        {/* About Us Section (Additional Cards) */}
+<CustomCard
+  imageSrc={BusinessOverviewImg}
+  imageAlt="Business Overview"
+  title="Short Business Overview"
+  description={
+    <ul>
+      <li>Trusted general contractor with a focus on quality.</li>
+      <li>Specializes in renovations, repairs, and tenant improvements.</li>
+      <li>
+        Delivering tailored solutions for property management clients.
+      </li>
+    </ul>
+  }
+  buttonText="Learn More"
+  features={[
+    { icon: FaBriefcase, text: "Professionalism" },
+    { icon: FaTools, text: "Tailored Services" },
+    { icon: FaBuilding, text: "Property Expertise" },
+    { icon: FaHandshake, text: "Reliability" },
+  ]}
+/>
+
+<CustomCard
+  imageSrc={MissionStatementImg}
+  imageAlt="Mission Statement"
+  title="Mission Statement"
+  description={
+    <ul>
+      <li>Exceptional craftsmanship and dependable service.</li>
+      <li>
+        Commitment to quality, innovation, and client satisfaction.
+      </li>
+      <li>Expertise in handling projects of all sizes.</li>
+    </ul>
+  }
+  buttonText="Our Values"
+  features={[
+    { icon: FaBullseye, text: "Focus" },
+    { icon: FaLightbulb, text: "Innovation" },
+    { icon: FaUsers, text: "Client Satisfaction" },
+    { icon: FaStar, text: "Quality" },
+  ]}
+/>
+
+<CustomCard
+  imageSrc={ServicesImg}
+  imageAlt="Detailed Services"
+  title="Detailed Service Description"
+  description={
+    <ul>
+      <li>Renovations and remodeling for residential and commercial spaces.</li>
+      <li>Repairs and maintenance for long-term asset value.</li>
+      <li>Custom tenant improvements to meet unique needs.</li>
+      <li>Comprehensive project management and inspections.</li>
+    </ul>
+  }
+  buttonText="Our Services"
+  features={[
+    { icon: FaWrench, text: "Comprehensive Services" },
+    { icon: FaClipboardCheck, text: "Project Management" },
+    { icon: FaBuilding, text: "Residential & Commercial" },
+    { icon: FaCogs, text: "Efficient Delivery" },
+  ]}
+/>
+
+<CustomCard
+  imageSrc={VisionImg}
+  imageAlt="Company Vision"
+  title="Company Vision"
+  description={
+    <ul>
+      <li>Setting the standard for excellence in construction.</li>
+      <li>
+        Combining expertise, creativity, and integrity in every project.
+      </li>
+      <li>
+        Aiming to be the trusted partner for property owners and managers.
+      </li>
+    </ul>
+  }
+  buttonText="Learn More"
+  features={[
+    { icon: FaEye, text: "Vision" },
+    { icon: FaTrophy, text: "Excellence" },
+    { icon: FaLightbulb, text: "Innovation" },
+    { icon: FaHandshake, text: "Trust" },
+  ]}
+/>
+
       </div>
+
+          
+
       <br />
 
       {/* Who We Serve Section */}
