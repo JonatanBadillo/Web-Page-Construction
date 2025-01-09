@@ -547,6 +547,8 @@
   margin-bottom: 10px;
 }
 
+
+
 .card-header h3 {
   color: #ffd00e; /* Título dorado */
   font-size: 1.8rem;
@@ -589,11 +591,22 @@
   }
 }
 
-/* Centrar la última carta en una fila nueva */
-.contract-info-cards > :last-child {
-  margin-left: auto;
-  margin-right: auto;
+
+
+.icon-uniform-size {
+  font-size: 1.7rem !important; /* Mantiene el tamaño que tenías en FaTools */
+  color: #ffd00e;
+  margin-right: 8px;
+  min-width: 1.7rem; /* Asegura un ancho mínimo */
+  min-height: 1.7rem; /* Asegura una altura mínima */
+  display: inline-flex; /* Mejora la alineación */
+  align-items: center;
+  justify-content: center;
 }
+
+
+
+
 
 html, body {
   overflow-x: hidden;

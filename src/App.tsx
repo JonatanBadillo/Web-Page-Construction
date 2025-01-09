@@ -708,31 +708,23 @@ const App = () => {
         />
         {/* Aquí mostramos las tarjetas según el contrato seleccionado */}
         <div className="contract-info-cards">
-          {contractInfo.content.map((section, index) => (
-            <div key={index} className="contract-card">
-              <div className="card-header">
-                <FaTools
-                  style={{
-                    fontSize: "2rem",
-                    color: "#ffd00e",
-                    marginRight: "10px",
-                  }}
-                />
-                <h3>{section.title}</h3>
-              </div>
-              <ul>
-                {section.details.map((item, idx) => (
-                  <li key={idx}>
-                    <FaHammer
-                      style={{ marginRight: "8px", color: "#ffd00e" }}
-                    />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+        {contractInfo.content.map((section, index) => (
+          <div key={index} className="contract-card">
+            <div className="card-header">
+              <FaTools className="icon-uniform-size" />
+              <h3>{section.title}</h3>
             </div>
-          ))}
-        </div>
+            <ul>
+              {section.details.map((item, idx) => (
+                <li key={idx}>
+                  <FaHammer className="icon-uniform-size" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
       </div>
 
       {/* Contact Form */}
