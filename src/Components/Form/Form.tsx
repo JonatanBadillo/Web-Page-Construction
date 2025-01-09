@@ -30,7 +30,7 @@ const Form = () => {
       formErrors.lastName = "Please enter a valid last name (at least 2 characters).";
     }
     if (!email) {
-      formErrors.email = "Email is required.";
+      formErrors.email = "Email is required";
     } else {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
