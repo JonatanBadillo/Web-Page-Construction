@@ -470,7 +470,7 @@
   border-radius: 15px;
   max-width: 800px;
   color: #fff;
-  text-align: center;
+  text-align: left;
   border: 2px solid #ffd00e;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   font-size: 1.4rem; /* Aumentar el tamaño de la fuente */
@@ -565,9 +565,11 @@
 }
 
 .contract-card li svg {
-  font-size: 1.2rem; /* Tamaño de los iconos */
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
   margin-right: 8px;
-  color: #ffd00e; /* Iconos dorados */
+  color: #ffd00e;
 }
 
 .contract-card li:hover {
