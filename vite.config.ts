@@ -1,9 +1,7 @@
-// vite.config.ts
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/Web-Page-Construction/", // YOUR REPO NAME HERE
+  base: "/", // Cambiamos de "/Web-Page-Construction/" a "/" porque ahora usaremos dominio personalizado
 });

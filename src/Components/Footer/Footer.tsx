@@ -39,8 +39,20 @@ const Footer = ({ onHomeClick, onAboutClick, onServicesClick, onContactClick }: 
       </div>
       <div className="footer-contact">
         <h3 className="footer-subtitle">Contact Us</h3>
-        <p>Email: admin@samalexanderconstruction.com</p>
-        <p>Phone: (408) 668-3162</p>
+
+<p>
+3031 Tisch Way      
+110 Plaza Oeste San José, CA 95128
+
+
+</p>
+<p>11 W 9th St #323, Los Angeles, CA 90015</p>
+
+
+        <p>admin@samalexanderconstruction.com</p>
+        
+        <p>(408) 668-3162</p>
+        
       </div>
       <div className="footer-social">
         <h3 className="footer-subtitle">Follow Us</h3>
