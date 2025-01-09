@@ -133,7 +133,9 @@ const Navbar = ({ onHomeClick, onAboutClick, onOurWorkClick, onContactClick, win
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ mr: 2, display: { sm: 'none' }, color: '#ffd00e' , '&:hover': {
+      backgroundColor: 'rgba(255, 208, 14, 0.1)', // Fondo ligeramente amarillo al pasar el cursor
+    } }}
           >
             <MenuIcon />
           </IconButton>
