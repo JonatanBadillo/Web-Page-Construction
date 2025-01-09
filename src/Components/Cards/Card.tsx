@@ -20,6 +20,8 @@ interface CardProps {
 }
 
 const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, description, features }) => {
+  const itemCount = features.length;
+  
   return (
     <Card 
       sx={{ 
@@ -115,12 +117,13 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
 
           <div 
             style={{ 
-              display: 'flex',
-              justifyContent: 'space-around',
-              flexWrap: 'wrap',
-              gap: '10px',
+              display: 'grid',
+              gridTemplateColumns: `repeat(${itemCount > 3 ? 3 : itemCount}, 1fr)`,
+              gap: '15px',
               marginTop: '20px',
               padding: '10px 0',
+              alignItems: 'start',
+              justifyItems: 'center',
             }}
           >
             {features.map((item, index) => (
@@ -132,9 +135,8 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
                   alignItems: 'center',
                   transition: 'transform 0.3s ease',
                   cursor: 'pointer',
-                  flex: '1 1 auto',
-                  minWidth: '80px',
-                  maxWidth: '120px',
+                  textAlign: 'center',
+                  gridColumn: itemCount === 4 && index === 3 ? '2 / 3' : 'auto',
                 }}
               >
                 <item.icon 
@@ -153,7 +155,6 @@ const CustomCard: React.FC<CardProps> = ({ imageSrc, imageAlt, title, descriptio
                     fontSize: '0.9rem',
                     fontWeight: '500',
                     opacity: 0.9,
-                    textAlign: 'center',
                   }}
                 >
                   {item.text}
