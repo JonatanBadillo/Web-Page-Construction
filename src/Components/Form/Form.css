@@ -27,7 +27,7 @@
   bottom: -10px;
   left: 0;
   background: linear-gradient(90deg, transparent, #ffd00e, transparent);
-  animation: shimmer 2s infinite;
+
 }
 
 .form-wrapper {
