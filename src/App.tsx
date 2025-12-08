@@ -94,7 +94,7 @@ const App = () => {
         title: "Renovations and Remodeling",
         details: [
           "Interior renovations (kitchen, bathroom, flooring, painting, etc.)",
-          "Exterior upgrades (siding replacement, roofing, windows, and doors)",
+          "Exterior upgrades (siding replacement, windows, and doors)",
           "Tenant improvement projects to customize units for new occupants",
         ],
       },
